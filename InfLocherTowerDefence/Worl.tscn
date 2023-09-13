@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://tmukhrb5xbsp"]
+
+[node name="Worl" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -1.0
+offset_right = 116.0
+offset_bottom = 40.0
+text = "Kekse"
