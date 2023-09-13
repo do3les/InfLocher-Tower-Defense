@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://tmukhrb5xbsp"]
+[gd_scene load_steps=2 format=3 uid="uid://tmukhrb5xbsp"]
+
+[ext_resource type="PackedScene" uid="uid://dw20asn4wid3l" path="res://Player/character_body_2d.tscn" id="1_uu378"]
 
 [node name="Worl" type="Node2D"]
 
@@ -7,3 +9,6 @@ offset_left = -1.0
 offset_right = 116.0
 offset_bottom = 40.0
 text = "Kekse"
+
+[node name="Playerr" parent="." instance=ExtResource("1_uu378")]
+position = Vector2(599, 287)
