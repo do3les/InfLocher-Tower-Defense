@@ -1,5 +1,5 @@
-# InfLocher-Tower-Defense
+# Backup des Test Projekts
 
-Projektarbeit von dem Informatikkurs der KS2 am Gymnasium Überlingen.
+Dieser Branch ist nicht zum weiterentwickeln gedacht.
 
-Stage:Planing
+**DO _NOT_ MERGE THIS BRANCH WITH MAIN!**
