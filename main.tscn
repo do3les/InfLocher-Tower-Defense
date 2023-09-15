@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://b75klh3ofo8ov"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_xkm4k"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_xkm4k")
+
+[node name="btn_start_game" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 475.0
+offset_top = 150.0
+offset_right = 725.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Start Game"
+
+[node name="btn_settings" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 475.0
+offset_top = 300.0
+offset_right = 725.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Settings"
+
+[node name="btn_exit_game" type="Button" parent="."]
+offset_left = 475.0
+offset_top = 450.0
+offset_right = 725.0
+offset_bottom = 500.0
+text = "Exit Game"
+
+[connection signal="pressed" from="btn_exit_game" to="." method="_on_btn_exit_game_pressed"]
