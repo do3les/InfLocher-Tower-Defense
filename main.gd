@@ -17,3 +17,8 @@ func _on_btn_exit_game_pressed():
 
 func _on_btn_settings_pressed():
 	get_tree().change_scene_to_file("res://settings.tscn")
+
+
+func _on_btn_start_game_pressed():
+	# get_tree().change_scene_to_file("res://")
+	pass # Replace with function body.
