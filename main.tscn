@@ -9,7 +9,7 @@ gradient = ExtResource("2_qm13e")
 [node name="Main" type="Node2D"]
 script = ExtResource("1_xkm4k")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="background" type="Sprite2D" parent="."]
 position = Vector2(600, 350)
 rotation = -1.5708
 scale = Vector2(12, 20)
@@ -50,4 +50,5 @@ offset_right = 725.0
 offset_bottom = 500.0
 text = "Exit Game"
 
+[connection signal="pressed" from="btn_settings" to="." method="_on_btn_settings_pressed"]
 [connection signal="pressed" from="btn_exit_game" to="." method="_on_btn_exit_game_pressed"]

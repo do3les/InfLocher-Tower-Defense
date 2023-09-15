@@ -11,9 +11,5 @@ func _process(delta):
 	pass
 
 
-func _on_btn_exit_game_pressed():
-	get_tree().quit()
-
-
-func _on_btn_settings_pressed():
-	get_tree().change_scene_to_file("res://settings.tscn")
+func _on_btn_back_pressed():
+	get_tree().change_scene_to_file("res://main.tscn")
