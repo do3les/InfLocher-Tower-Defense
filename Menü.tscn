@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://71shikfqxoqx"]
+
+[ext_resource type="Script" path="res://Menü.gd" id="1_gaagf"]
+
+[node name="Menü" type="Node2D"]
+script = ExtResource("1_gaagf")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 143.0
+offset_top = 217.0
+offset_right = 306.0
+offset_bottom = 285.0
+text = "Bsp Button lvl 1"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 481.0
+offset_top = 224.0
+offset_right = 671.0
+offset_bottom = 290.0
+text = "Bsp Button Shop"
+
+[connection signal="pressed" from="Button" to="." method="_on_buttonLvl1_pressed"]
