@@ -1,20 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://b75klh3ofo8ov"]
+[gd_scene load_steps=3 format=3 uid="uid://b75klh3ofo8ov"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_xkm4k"]
-[ext_resource type="Gradient" uid="uid://guskjbb1y72x" path="res://assets/start_screen_gradient.tres" id="2_qm13e"]
 [ext_resource type="Theme" uid="uid://detsu6arwhhvh" path="res://assets/theme_0.tres" id="3_g6ml1"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_q6r5a"]
-gradient = ExtResource("2_qm13e")
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_xkm4k")
 
-[node name="background" type="Sprite2D" parent="."]
-position = Vector2(600, 350)
-rotation = -1.5708
-scale = Vector2(12, 20)
-texture = SubResource("GradientTexture2D_q6r5a")
+[node name="background" type="ColorRect" parent="."]
+z_index = -5
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
 
 [node name="btn_start_game" type="Button" parent="."]
 anchors_preset = 7
@@ -22,10 +18,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 475.0
-offset_top = 150.0
-offset_right = 725.0
-offset_bottom = 200.0
+offset_left = 835.0
+offset_top = 300.0
+offset_right = 1085.0
+offset_bottom = 350.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("3_g6ml1")
@@ -37,20 +33,20 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 475.0
-offset_top = 300.0
-offset_right = 725.0
-offset_bottom = 350.0
+offset_left = 835.0
+offset_top = 400.0
+offset_right = 1085.0
+offset_bottom = 450.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("3_g6ml1")
 text = "Settings"
 
 [node name="btn_exit_game" type="Button" parent="."]
-offset_left = 475.0
-offset_top = 450.0
-offset_right = 725.0
-offset_bottom = 500.0
+offset_left = 835.0
+offset_top = 550.0
+offset_right = 1085.0
+offset_bottom = 600.0
 theme = ExtResource("3_g6ml1")
 text = "Exit Game"
 
