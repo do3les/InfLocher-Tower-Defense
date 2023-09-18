@@ -16,9 +16,9 @@ func _on_btn_exit_game_pressed():
 
 
 func _on_btn_settings_pressed():
-	get_tree().change_scene_to_file("res://settings.tscn")
+	get_tree().change_scene_to_file("res://interface-scenes/settings.tscn")
 
 
 func _on_btn_start_game_pressed():
-	get_tree().change_scene_to_file("res://Menü.tscn")
+	get_tree().change_scene_to_file("res://interface-scenes/menu.tscn")
 
