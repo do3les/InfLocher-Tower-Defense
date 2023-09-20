@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj33742gqt0y"]
+
+[ext_resource type="PackedScene" uid="uid://bictxwblu0emk" path="res://path/path.tscn" id="1_amld6"]
+[ext_resource type="PackedScene" uid="uid://boefrkplkw5pq" path="res://Turrets/BasicTwoer.tscn" id="2_50rgu"]
+
+[sub_resource type="Curve2D" id="Curve2D_10ntc"]
+resource_local_to_scene = true
+bake_interval = 64.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, -13.9654, -12.1976, 13.9654, 12.1976, 64, 0, -15.0169, -7.84218, 15.0169, 7.84218, 64, 64, -9.8995, 12.7279, 9.8995, -12.7279, 128, 64, -19.2119, 3.22249, 19.2119, -3.22249, 136, 0, -9.51366, 1.18921, 9.51366, -1.18921, 224, 24, 0, 0, 0, 0, 256, 16, 0, 0, 0, 0, 326.154, 19.1962, 0, 0, 0, 0, 449.231, 91.1818, 48.6458, -66.8129, -48.6458, 66.8129, 492.308, 191.962, 35.5768, -105.315, -35.5768, 105.315, 240, 230.354, -161.185, 32.8403, 161.185, -32.8403, 523.077, 388.722, 0, 0, 0, 0, 732.308, 220.756)
+}
+point_count = 13
+
+[node name="Level 1" type="Node2D"]
+
+[node name="Path" parent="." instance=ExtResource("1_amld6")]
+position = Vector2(384, 248)
+curve = SubResource("Curve2D_10ntc")
+
+[node name="Turret" type="Node2D" parent="."]
+
+[node name="BasicTwoer" parent="Turret" instance=ExtResource("2_50rgu")]
+position = Vector2(647, 352)
