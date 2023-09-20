@@ -24,6 +24,6 @@ Neue änderungen:
 -zum speichern von z.B. TowerStats, GegnerStats etc.
 
 
-1. First list item
-   - First nested list item
-     - Second nested list item
+1. Level 1
+   - BasicNode
+     - Als PLatzthalter zur verlinkung von TowerSzenen
