@@ -7,7 +7,7 @@ Neue änderungen:
 
 1.Level 1
   -BasicNode
-    -AlsPLatzt Halter zur verlinkung von TowerSzenen
+   -AlsPLatzt Halter zur verlinkung von TowerSzenen
 1.Tower
   -SzeneBasicTower
    - Sprites
