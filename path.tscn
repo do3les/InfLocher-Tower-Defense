@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bictxwblu0emk"]
+[gd_scene load_steps=10 format=3 uid="uid://bictxwblu0emk"]
 
 [ext_resource type="Script" path="res://path_curve_to_line.gd" id="1_bvjlu"]
 [ext_resource type="Texture2D" uid="uid://d2iq5681ug1es" path="res://assets/gradient_tex_path.tres" id="1_qiawn"]
+[ext_resource type="Script" path="res://path.gd" id="1_vn872"]
 [ext_resource type="Texture2D" uid="uid://dh7erh4n4d5q" path="res://assets/icon_skeleton.svg" id="3_i3omq"]
 [ext_resource type="Script" path="res://btn_start_wave.gd" id="4_l8vuf"]
 [ext_resource type="Script" path="res://target.gd" id="5_cu3jl"]
 [ext_resource type="Texture2D" uid="uid://cx8ulskjqhvo7" path="res://assets/icon.svg" id="5_l0fd3"]
+[ext_resource type="PackedScene" uid="uid://c6rf8sxixrh3o" path="res://test_path_follower.tscn" id="5_mnkxd"]
 
 [sub_resource type="Curve2D" id="Curve2D_533h5"]
 resource_local_to_scene = true
@@ -15,20 +17,19 @@ _data = {
 }
 point_count = 13
 
-[node name="Path" type="Node2D"]
-position = Vector2(16, 16)
-
-[node name="Path2D" type="Path2D" parent="."]
+[node name="Path" type="Path2D"]
 position = Vector2(-16, 8)
 curve = SubResource("Curve2D_533h5")
+script = ExtResource("1_vn872")
+enemy_scene = ExtResource("5_mnkxd")
 
-[node name="PathLine" type="Line2D" parent="Path2D"]
+[node name="line" type="Line2D" parent="."]
 width = 50.0
 texture = ExtResource("1_qiawn")
 texture_mode = 1
 script = ExtResource("1_bvjlu")
 
-[node name="btn_start_wave" type="Button" parent="Path2D"]
+[node name="btn_start_wave" type="Button" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -45,7 +46,7 @@ icon_alignment = 1
 expand_icon = true
 script = ExtResource("4_l8vuf")
 
-[node name="target" type="Button" parent="Path2D"]
+[node name="target" type="Button" parent="."]
 offset_left = -32.0
 offset_top = 56.0
 offset_right = 32.0
@@ -54,3 +55,5 @@ icon = ExtResource("5_l0fd3")
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("5_cu3jl")
+
+[connection signal="pressed" from="btn_start_wave" to="." method="_on_btn_start_wave_pressed"]
