@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxss2wpnmmuaw"]
+[gd_scene load_steps=5 format=3 uid="uid://dxss2wpnmmuaw"]
 
 [ext_resource type="Script" path="res://interface-scenes/settings.gd" id="1_0475y"]
 [ext_resource type="Theme" uid="uid://detsu6arwhhvh" path="res://assets/theme_0.tres" id="3_bh3fp"]
-[ext_resource type="PackedScene" uid="uid://bictxwblu0emk" path="res://path.tscn" id="3_ueoo5"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_be815"]
 keycode = 4194305
@@ -30,8 +29,5 @@ offset_bottom = 88.0
 theme = ExtResource("3_bh3fp")
 shortcut = SubResource("Shortcut_uptm6")
 text = "<"
-
-[node name="Path" parent="." instance=ExtResource("3_ueoo5")]
-position = Vector2(304, 272)
 
 [connection signal="pressed" from="btn_back" to="." method="_on_btn_back_pressed"]
