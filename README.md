@@ -13,6 +13,7 @@ Neue änderungen:
      - Sprites
        - TowerBasis
        - TowerHead
+     - Behebung Pixelation (Für das ganze Projekt bei Problemen Bitte melden. (Pixelation eingestellt auf Pixelart also klare übergänge zwischen einzelnen Pixel. Könnte für Porbleme in normalen Bildern sorgen (Lässt sich aber dann individuell für jedes bild wieder anpassen)
    - Extends von einem neuem Towerscript zum mangen von allgemienem Tower verhalten
 3. allgemeines TowerScript
    - Array für gegner (bitte nutzt für den gegner KinematicBody2D damit ich ihn erkennen kann)
