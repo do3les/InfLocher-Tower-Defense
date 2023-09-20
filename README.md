@@ -8,7 +8,7 @@ Neue änderungen:
 1. Level 1
 -BasicNode
 -AlsPLatzt Halter zur verlinkung von TowerSzenen
-1. Tower
+2. Tower
 -SzeneBasicTower
 -Sprites
 -TowerBasis
@@ -20,5 +20,5 @@ Neue änderungen:
 - Func für erkenne ob sich gener in range befinden
 - + bin dabei ,dass enemy tracking von genern zu implimentiren (wie bereits oben erwähnt nehmt den richtigen Collider pls)
 - + bin dabei ,dass bauen von tower zu implimentieren (mit ihren dem entsprechenden werten)
-1. DatenBasisSatzt
+3. DatenBasisSatzt
 -zum speichern von z.B. TowerStats, GegnerStats etc.
