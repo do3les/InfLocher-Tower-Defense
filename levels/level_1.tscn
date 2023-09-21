@@ -1,9 +1,11 @@
+
 [gd_scene load_steps=4 format=3 uid="uid://bj33742gqt0y"]
 
 [ext_resource type="PackedScene" uid="uid://bictxwblu0emk" path="res://path/path.tscn" id="1_amld6"]
 [ext_resource type="PackedScene" uid="uid://boefrkplkw5pq" path="res://Turrets/BasicTwoer.tscn" id="2_50rgu"]
 
 [sub_resource type="Curve2D" id="Curve2D_10ntc"]
+
 resource_local_to_scene = true
 bake_interval = 64.0
 _data = {
@@ -15,6 +17,7 @@ point_count = 13
 
 [node name="Path" parent="." instance=ExtResource("1_amld6")]
 position = Vector2(384, 248)
+
 curve = SubResource("Curve2D_10ntc")
 
 [node name="Turret" type="Node2D" parent="."]
