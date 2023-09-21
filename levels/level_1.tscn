@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://boefrkplkw5pq" path="res://towers/BasicTower.tscn" id="2_50rgu"]
 [ext_resource type="PackedScene" uid="uid://dofousg2mogco" path="res://enemy/basic_enemy.tscn" id="2_371tr"]
 
-[sub_resource type="Curve2D" id="Curve2D_28he6"]
+[sub_resource type="Curve2D" id="Curve2D_2oerh"]
 resource_local_to_scene = true
 bake_interval = 64.0
 _data = {
@@ -16,7 +16,7 @@ point_count = 6
 
 [node name="Path" parent="." instance=ExtResource("1_amld6")]
 position = Vector2(384, 248)
-curve = SubResource("Curve2D_28he6")
+curve = SubResource("Curve2D_2oerh")
 enemy_scene = ExtResource("2_371tr")
 
 [node name="Turret" type="Node2D" parent="."]

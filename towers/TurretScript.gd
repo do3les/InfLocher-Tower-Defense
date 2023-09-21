@@ -1,7 +1,7 @@
 extends Node
 
 var enemy_array = []
-var built = false
+var built = true
 
 func _physics_process(delta):
 	turn()
@@ -15,7 +15,7 @@ func turn():
 	var enemyPos
 
 
-func _on_range_body_entered(body):
+func _on_range_body_entered(body): # This won't work! on_body_enter checks if the given body entered (I think)
 	enemy_array.append(body.get_parent())
 	print(enemy_array)
 
