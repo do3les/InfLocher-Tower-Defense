@@ -1,25 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxss2wpnmmuaw"]
+[gd_scene load_steps=5 format=3 uid="uid://dxss2wpnmmuaw"]
 
 [ext_resource type="Script" path="res://interface-scenes/settings.gd" id="1_0475y"]
-[ext_resource type="Gradient" uid="uid://d3kxnp72jvsg2" path="res://assets/settings_screen_gradient.tres" id="2_ye8fh"]
+[ext_resource type="Theme" uid="uid://detsu6arwhhvh" path="res://assets/theme_0.tres" id="3_bh3fp"]
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_qyvg7"]
-gradient = ExtResource("2_ye8fh")
+[sub_resource type="InputEventKey" id="InputEventKey_be815"]
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_uptm6"]
+events = [SubResource("InputEventKey_be815")]
 
 [node name="Settings" type="Node2D"]
 script = ExtResource("1_0475y")
-
-[node name="background" type="Sprite2D" parent="."]
-position = Vector2(600, 350)
-rotation = -1.5708
-scale = Vector2(12, 20)
-texture = SubResource("GradientTexture2D_qyvg7")
 
 [node name="title" type="Label" parent="."]
 offset_left = 96.0
 offset_top = 48.0
 offset_right = 221.0
 offset_bottom = 96.0
+theme = ExtResource("3_bh3fp")
 theme_override_font_sizes/font_size = 32
 text = "Settings"
 
@@ -28,6 +26,8 @@ offset_left = 32.0
 offset_top = 56.0
 offset_right = 64.0
 offset_bottom = 88.0
+theme = ExtResource("3_bh3fp")
+shortcut = SubResource("Shortcut_uptm6")
 text = "<"
 
 [connection signal="pressed" from="btn_back" to="." method="_on_btn_back_pressed"]
