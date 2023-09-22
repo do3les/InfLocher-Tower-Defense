@@ -2,7 +2,7 @@ extends Node
 
 var enemyArray = []
 var enemy
-var built = false
+var built = true
 
 func _physics_process(delta):
 	if enemyArray.size() != 0: #and built:
@@ -11,17 +11,22 @@ func _physics_process(delta):
 	else:
 		enemy = null
 
-#func _ready():
-#	if built:
-#		self.get_node("Range/CollisionShape2D").get_shape().radius = GameData.towerStats[self.get_name()]["range"]
+func _ready():
+	if built:
+		self.get_node("Range/CollisionShape2D").get_shape().radius = GameData.towerStats[self.get_name()]["range"]
 
 func selectEnemy():
-	var progressionEnemyAr = []
-	for i in progressionEnemyAr:
-		progressionEnemyAr.append(i.offset)
-	var furthestEnemy = progressionEnemyAr.max()
-	var targetEnemy = progressionEnemyAr.find(furthestEnemy)
-	enemy = enemyArray[targetEnemy]
+	enemyArray.sort_custom(custom_enemy_sort_by_offset)
+	enemy = enemyArray[0]
+
+func custom_enemy_sort_by_offset(a, b):
+	if typeof(a) == typeof(b):
+		return a.offset < b.offset;
+	else:  # Check to make sure stuff works
+		if typeof(a) == TYPE_STRING:
+			return false;
+		else:
+			return true;
 
 
 func turn():
@@ -37,4 +42,5 @@ func _on_range_body_entered(body):
 
 
 func _on_range_body_exited(body):
-	enemyArray.append(body.get_parent())
+	enemyArray.erase(body.get_parent())
+	print(enemyArray)

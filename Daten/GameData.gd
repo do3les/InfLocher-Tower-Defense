@@ -4,5 +4,5 @@ extends Node
 var towerStats = {
 	"BasicTower":{
 		"damge": 10,
-		"range": 800}}
+		"range": 300}}
 
