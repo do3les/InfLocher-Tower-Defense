@@ -21,7 +21,7 @@ func selectEnemy():
 
 func custom_enemy_sort_by_offset(a, b):
 	if typeof(a) == typeof(b):
-		return a.offset < b.offset;
+		return a.offset < b.offset;  # try flipping this comparison 
 	else:  # Check to make sure stuff works
 		if typeof(a) == TYPE_STRING:
 			return false;
