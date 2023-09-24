@@ -21,9 +21,10 @@ texture = ExtResource("2_xlxxe")
 
 [node name="BasicTowerHead" type="Sprite2D" parent="."]
 texture = ExtResource("3_66q3f")
+flip_h = true
 
 [node name="TowerHead" type="Marker2D" parent="BasicTowerHead"]
-position = Vector2(-16, -0.5)
+position = Vector2(16, 0)
 
 [connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
 [connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]
