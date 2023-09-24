@@ -17,3 +17,4 @@ func _physics_process(delta):
 		reached_target.emit()
 		queue_free()
 
+

@@ -1,11 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bj33742gqt0y"]
+[gd_scene load_steps=5 format=3 uid="uid://bj33742gqt0y"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_3tdpq"]
 [ext_resource type="PackedScene" uid="uid://bictxwblu0emk" path="res://path/path.tscn" id="1_amld6"]
-[ext_resource type="PackedScene" uid="uid://boefrkplkw5pq" path="res://towers/BasicTower.tscn" id="2_50rgu"]
 [ext_resource type="PackedScene" uid="uid://cumkwsnn0o4d1" path="res://interface-scenes/game_hud.tscn" id="4_vhbfe"]
 
-[sub_resource type="Curve2D" id="Curve2D_eqodi"]
+[sub_resource type="Curve2D" id="Curve2D_pspwu"]
 resource_local_to_scene = true
 bake_interval = 64.0
 _data = {
@@ -18,11 +17,6 @@ script = ExtResource("1_3tdpq")
 
 [node name="Path" parent="." instance=ExtResource("1_amld6")]
 position = Vector2(496, 352)
-curve = SubResource("Curve2D_eqodi")
-
-[node name="Turret" type="Node2D" parent="."]
-
-[node name="BasicTower" parent="Turret" instance=ExtResource("2_50rgu")]
-position = Vector2(1008, 264)
+curve = SubResource("Curve2D_pspwu")
 
 [node name="HUD" parent="." instance=ExtResource("4_vhbfe")]
