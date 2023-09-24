@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://boefrkplkw5pq" path="res://towers/BasicTower.tscn" id="2_50rgu"]
 [ext_resource type="PackedScene" uid="uid://cumkwsnn0o4d1" path="res://interface-scenes/game_hud.tscn" id="4_vhbfe"]
 
-[sub_resource type="Curve2D" id="Curve2D_sgtpd"]
+[sub_resource type="Curve2D" id="Curve2D_goawb"]
 resource_local_to_scene = true
 bake_interval = 64.0
 _data = {
@@ -17,12 +17,12 @@ point_count = 6
 script = ExtResource("1_3tdpq")
 
 [node name="Path" parent="." instance=ExtResource("1_amld6")]
-position = Vector2(384, 248)
-curve = SubResource("Curve2D_sgtpd")
+position = Vector2(496, 352)
+curve = SubResource("Curve2D_goawb")
 
 [node name="Turret" type="Node2D" parent="."]
 
 [node name="BasicTower" parent="Turret" instance=ExtResource("2_50rgu")]
-position = Vector2(680, 168)
+position = Vector2(1008, 264)
 
 [node name="HUD" parent="." instance=ExtResource("4_vhbfe")]
