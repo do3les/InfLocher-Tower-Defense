@@ -50,6 +50,6 @@ offset_bottom = 600.0
 theme = ExtResource("2_5swa3")
 text = "Exit Game"
 
-[connection signal="pressed" from="StartGameButton" to="." method="_on_btn_start_game_pressed"]
-[connection signal="pressed" from="SettingsButton" to="." method="_on_btn_settings_pressed"]
-[connection signal="pressed" from="ExitGameButton" to="." method="_on_btn_exit_game_pressed"]
+[connection signal="pressed" from="StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="ExitGameButton" to="." method="_on_exit_game_button_pressed"]

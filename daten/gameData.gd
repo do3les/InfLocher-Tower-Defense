@@ -8,8 +8,8 @@ var towerStats = {
 
 
 var levels = {
-	"Level 1":{
-		"enemy":"basic_enemy",
+	"Level1":{
+		"enemy":"basicEnemy",
 		"number":10,
 		"wait":0.1
 	}
