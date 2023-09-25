@@ -1,6 +1,5 @@
 [gd_scene load_steps=5 format=3 uid="uid://boefrkplkw5pq"]
 
-
 [ext_resource type="Script" path="res://towers/BasicTower.gd" id="1_4t2f8"]
 [ext_resource type="Texture2D" uid="uid://dna35p43t8k2m" path="res://assets/Tower Base.svg" id="2_xlxxe"]
 [ext_resource type="Texture2D" uid="uid://cfqiceskhvumo" path="res://assets/BasicTowerHead.svg" id="3_66q3f"]
@@ -9,7 +8,6 @@
 radius = 0.01
 
 [node name="BasicTower" type="Node2D"]
-
 script = ExtResource("1_4t2f8")
 
 [node name="Range" type="Area2D" parent="."]
@@ -23,9 +21,10 @@ texture = ExtResource("2_xlxxe")
 
 [node name="BasicTowerHead" type="Sprite2D" parent="."]
 texture = ExtResource("3_66q3f")
+flip_h = true
 
 [node name="TowerHead" type="Marker2D" parent="BasicTowerHead"]
-position = Vector2(-16, -0.5)
+position = Vector2(16, 0)
 
 [connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
 [connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]
