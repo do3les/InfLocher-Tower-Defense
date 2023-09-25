@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://et5n1ogkvliw"
-path="res://.godot/imported/BasicEnemyCircle.svg-808b357d6403a6674bd5927343f3b7a5.ctex"
+path="res://.godot/imported/basicEnemyCircle.svg-7c83dab064c4f006a8ab7c479f66b8b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/BasicEnemyCircle.svg"
-dest_files=["res://.godot/imported/BasicEnemyCircle.svg-808b357d6403a6674bd5927343f3b7a5.ctex"]
+source_file="res://assets/basicEnemyCircle.svg"
+dest_files=["res://.godot/imported/basicEnemyCircle.svg-7c83dab064c4f006a8ab7c479f66b8b8.ctex"]
 
 [params]
 

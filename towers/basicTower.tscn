@@ -1,14 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://boefrkplkw5pq"]
 
-[ext_resource type="Script" path="res://towers/BasicTower.gd" id="1_4t2f8"]
-[ext_resource type="Texture2D" uid="uid://dna35p43t8k2m" path="res://assets/Tower Base.svg" id="2_xlxxe"]
-[ext_resource type="Texture2D" uid="uid://cfqiceskhvumo" path="res://assets/BasicTowerHead.svg" id="3_66q3f"]
+[ext_resource type="Script" path="res://towers/basicTower.gd" id="1_dbqtl"]
+[ext_resource type="Texture2D" uid="uid://dna35p43t8k2m" path="res://assets/towerBase.svg" id="2_obvtj"]
+[ext_resource type="Texture2D" uid="uid://cfqiceskhvumo" path="res://assets/basicTowerHead.svg" id="3_fw52o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jpl4i"]
 radius = 0.01
 
 [node name="BasicTower" type="Node2D"]
-script = ExtResource("1_4t2f8")
+script = ExtResource("1_dbqtl")
 
 [node name="Range" type="Area2D" parent="."]
 
@@ -17,10 +17,10 @@ shape = SubResource("CircleShape2D_jpl4i")
 one_way_collision_margin = 0.0
 
 [node name="TowerBase" type="Sprite2D" parent="."]
-texture = ExtResource("2_xlxxe")
+texture = ExtResource("2_obvtj")
 
 [node name="BasicTowerHead" type="Sprite2D" parent="."]
-texture = ExtResource("3_66q3f")
+texture = ExtResource("3_fw52o")
 flip_h = true
 
 [node name="TowerHead" type="Marker2D" parent="BasicTowerHead"]
