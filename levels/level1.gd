@@ -1,1 +1,1 @@
-extends "base_level.gd"
+extends "baseLevel.gd"
