@@ -19,13 +19,13 @@ point_count = 13
 position = Vector2(-16, 8)
 curve = SubResource("Curve2D_533h5")
 
-[node name="line" type="Line2D" parent="."]
+[node name="PathLine" type="Line2D" parent="."]
 width = 50.0
 texture = ExtResource("1_a53yf")
 texture_mode = 1
 script = ExtResource("2_kxjq8")
 
-[node name="enemy_start" type="Button" parent="."]
+[node name="Start" type="Button" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -42,7 +42,7 @@ icon_alignment = 1
 expand_icon = true
 script = ExtResource("4_0pwbt")
 
-[node name="enemy_target" type="Button" parent="."]
+[node name="Target" type="Button" parent="."]
 offset_left = -32.0
 offset_top = 56.0
 offset_right = 32.0

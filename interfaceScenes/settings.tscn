@@ -12,7 +12,7 @@ events = [SubResource("InputEventKey_be815")]
 [node name="Settings" type="Node2D"]
 script = ExtResource("1_6f2ev")
 
-[node name="title" type="Label" parent="."]
+[node name="TitleLabel" type="Label" parent="."]
 offset_left = 96.0
 offset_top = 48.0
 offset_right = 221.0
@@ -21,7 +21,7 @@ theme = ExtResource("2_jpjk1")
 theme_override_font_sizes/font_size = 32
 text = "Settings"
 
-[node name="btn_back" type="Button" parent="."]
+[node name="BackButton" type="Button" parent="."]
 offset_left = 32.0
 offset_top = 56.0
 offset_right = 64.0
@@ -30,4 +30,4 @@ theme = ExtResource("2_jpjk1")
 shortcut = SubResource("Shortcut_uptm6")
 text = "<"
 
-[connection signal="pressed" from="btn_back" to="." method="_on_btn_back_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_btn_back_pressed"]

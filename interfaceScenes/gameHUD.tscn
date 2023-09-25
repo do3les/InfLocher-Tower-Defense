@@ -8,7 +8,7 @@
 
 [node name="HUD" type="Node2D"]
 
-[node name="btn_start_wave" type="Button" parent="."]
+[node name="StartWaveButton" type="Button" parent="."]
 offset_left = 1536.0
 offset_top = 896.0
 offset_right = 1856.0
@@ -16,7 +16,7 @@ offset_bottom = 1024.0
 theme = ExtResource("1_1bl72")
 text = "Start Wave"
 
-[node name="pgrs_health" type="TextureProgressBar" parent="."]
+[node name="HealthBar" type="TextureProgressBar" parent="."]
 offset_left = 1152.0
 offset_top = 64.0
 offset_right = 1792.0
@@ -26,7 +26,7 @@ nine_patch_stretch = true
 texture_progress = ExtResource("2_3x3x7")
 script = ExtResource("3_ymq8w")
 
-[node name="health_display" type="Label" parent="pgrs_health"]
+[node name="HealthLabel" type="Label" parent="HealthBar"]
 layout_mode = 0
 offset_left = 640.0
 offset_right = 744.0
@@ -35,14 +35,14 @@ theme = ExtResource("1_1bl72")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="kills_display" type="Label" parent="."]
+[node name="KillsLabel" type="Label" parent="."]
 offset_left = 1792.0
 offset_top = 128.0
 offset_right = 1856.0
 offset_bottom = 192.0
 script = ExtResource("4_5p21o")
 
-[node name="btn_build" type="Button" parent="."]
+[node name="BuildTowerButton" type="Button" parent="."]
 offset_left = 64.0
 offset_top = 896.0
 offset_right = 192.0

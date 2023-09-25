@@ -6,13 +6,13 @@
 [node name="Main" type="Node2D"]
 script = ExtResource("1_xkm4k")
 
-[node name="background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 z_index = -5
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
 
-[node name="btn_start_game" type="Button" parent="."]
+[node name="StartGameButton" type="Button" parent="."]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -27,7 +27,7 @@ grow_vertical = 0
 theme = ExtResource("2_5swa3")
 text = "Start Game"
 
-[node name="btn_settings" type="Button" parent="."]
+[node name="SettingsButton" type="Button" parent="."]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -42,7 +42,7 @@ grow_vertical = 0
 theme = ExtResource("2_5swa3")
 text = "Settings"
 
-[node name="btn_exit_game" type="Button" parent="."]
+[node name="ExitGameButton" type="Button" parent="."]
 offset_left = 835.0
 offset_top = 550.0
 offset_right = 1085.0
@@ -50,6 +50,6 @@ offset_bottom = 600.0
 theme = ExtResource("2_5swa3")
 text = "Exit Game"
 
-[connection signal="pressed" from="btn_start_game" to="." method="_on_btn_start_game_pressed"]
-[connection signal="pressed" from="btn_settings" to="." method="_on_btn_settings_pressed"]
-[connection signal="pressed" from="btn_exit_game" to="." method="_on_btn_exit_game_pressed"]
+[connection signal="pressed" from="StartGameButton" to="." method="_on_btn_start_game_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_btn_settings_pressed"]
+[connection signal="pressed" from="ExitGameButton" to="." method="_on_btn_exit_game_pressed"]
