@@ -12,4 +12,4 @@ func _process(delta):
 
 
 func _on_buttonLvl1_pressed():
-	get_tree().change_scene_to_file("res://levels/level_1.tscn")
+	get_tree().change_scene_to_file("res://levels/level1.tscn")

@@ -1,0 +1,1 @@
+extends "baseLevel.gd"

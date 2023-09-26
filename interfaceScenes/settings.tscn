@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dxss2wpnmmuaw"]
 
-[ext_resource type="Script" path="res://interface-scenes/settings.gd" id="1_0475y"]
-[ext_resource type="Theme" uid="uid://detsu6arwhhvh" path="res://assets/theme_0.tres" id="3_bh3fp"]
+[ext_resource type="Script" path="res://interfaceScenes/settings.gd" id="1_6f2ev"]
+[ext_resource type="Theme" uid="uid://detsu6arwhhvh" path="res://assets/mainTheme.tres" id="2_jpjk1"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_be815"]
 keycode = 4194305
@@ -10,24 +10,24 @@ keycode = 4194305
 events = [SubResource("InputEventKey_be815")]
 
 [node name="Settings" type="Node2D"]
-script = ExtResource("1_0475y")
+script = ExtResource("1_6f2ev")
 
-[node name="title" type="Label" parent="."]
+[node name="TitleLabel" type="Label" parent="."]
 offset_left = 96.0
 offset_top = 48.0
 offset_right = 221.0
 offset_bottom = 96.0
-theme = ExtResource("3_bh3fp")
+theme = ExtResource("2_jpjk1")
 theme_override_font_sizes/font_size = 32
 text = "Settings"
 
-[node name="btn_back" type="Button" parent="."]
+[node name="BackButton" type="Button" parent="."]
 offset_left = 32.0
 offset_top = 56.0
 offset_right = 64.0
 offset_bottom = 88.0
-theme = ExtResource("3_bh3fp")
+theme = ExtResource("2_jpjk1")
 shortcut = SubResource("Shortcut_uptm6")
 text = "<"
 
-[connection signal="pressed" from="btn_back" to="." method="_on_btn_back_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_btn_back_pressed"]

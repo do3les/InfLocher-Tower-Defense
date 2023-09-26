@@ -11,14 +11,13 @@ func _process(delta):
 	pass
 
 
-func _on_btn_exit_game_pressed():
+func _on_start_game_button_pressed():
+	get_tree().change_scene_to_file("res://interfaceScenes/menu.tscn")
+
+
+func _on_settings_button_pressed():
+	get_tree().change_scene_to_file("res://interfaceScenes/settings.tscn")
+
+
+func _on_exit_game_button_pressed():
 	get_tree().quit()
-
-
-func _on_btn_settings_pressed():
-	get_tree().change_scene_to_file("res://interface-scenes/settings.tscn")
-
-
-func _on_btn_start_game_pressed():
-	get_tree().change_scene_to_file("res://interface-scenes/menu.tscn")
-

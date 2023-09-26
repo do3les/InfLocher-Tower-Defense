@@ -2,7 +2,7 @@ extends Node2D
 
 var health = 100
 var enemy
-var tower_scene
+var towerScene
 var number = 0
 var wait = 0
 var kills = 0
@@ -10,11 +10,11 @@ var kills = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	enemy = load("res://enemy/" + GameData.levels[self.get_name()]["enemy"] + ".tscn")
-	tower_scene = preload("res://towers/BasicTower.tscn")
+	towerScene = preload("res://towers/basicTower.tscn")
 	number = GameData.levels[self.get_name()]["number"]
 	wait = GameData.levels[self.get_name()]["wait"]
-	get_node("HUD/btn_start_wave").pressed.connect(start_wave)
-	get_node("HUD/btn_build").pressed.connect(build_tower)
+	get_node("HUD/StartWaveButton").pressed.connect(start_wave)
+	get_node("HUD/BuildTowerButton").pressed.connect(build_tower)
 	
 
 
@@ -38,4 +38,4 @@ func enemy_hit(body):
 	kills += 1
 	
 func build_tower():
-	self.add_child(tower_scene.instantiate())
+	self.add_child(towerScene.instantiate())
