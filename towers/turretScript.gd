@@ -4,7 +4,7 @@ var enemyArray = []
 var enemy
 var built = false
 
-func _process(delta):
+func _process(_delta):
 	if enemyArray.size() != 0: #and built:
 		select_enemy()
 		turn()
@@ -40,9 +40,6 @@ func turn():
 	print(str(enemy.position + enemy.get_parent().position))
 	print("turn")
 	
-
-
-
 
 func _on_range_body_entered(body):
 	if built:
