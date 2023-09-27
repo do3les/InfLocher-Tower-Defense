@@ -3,8 +3,11 @@ extends Node
 
 var towerStats = {
 	"BasicTower":{
+		"fireRate": 1,
 		"damge": 10,
-		"range": 300}}
+		"range": 300
+		}
+		}
 
 
 var levels = {

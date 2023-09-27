@@ -3,14 +3,25 @@ extends Node
 var enemyArray = []
 var enemy
 var built = false
+var isReady = true
+var fireRate
 
 func _process(_delta):
 	if enemyArray.size() != 0: #and built:
 		select_enemy()
 		turn()
+		if isReady:
+			shoot()
 	elif not built:
 		enemy = null
 		self.position = get_viewport().get_mouse_position()
+
+func shoot():
+	isReady = false 
+	print("shoot")
+	await  get_tree().create_timer(fireRate).timeout
+	isReady = true
+
 
 func _input(event):
 	if event is InputEventMouseButton and not built:
@@ -19,6 +30,7 @@ func _input(event):
 
 func _ready():
 	self.get_node("Range/CollisionShape2D").get_shape().radius = GameData.towerStats[self.get_name()]["range"]
+	fireRate = GameData.towerStats[self.get_name()]["fireRate"]
 	# crashes with multiple instances, because two instances don't have the same name, only the first is called BasicTower
 
 func select_enemy():
@@ -37,8 +49,8 @@ func custom_enemy_sort_by_progress(a, b):
 
 func turn():
 	get_node("BasicTowerHead").look_at(enemy.position + enemy.get_parent().position)
-	print(str(enemy.position + enemy.get_parent().position))
-	print("turn")
+	#print(str(enemy.position + enemy.get_parent().position))
+	#print("turn")
 	
 
 func _on_range_body_entered(body):
