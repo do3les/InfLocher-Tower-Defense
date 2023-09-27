@@ -14,12 +14,16 @@ func _ready():
 	number = GameData.levels[self.get_name()]["number"]
 	wait = GameData.levels[self.get_name()]["wait"]
 	get_node("HUD/StartWaveButton").pressed.connect(start_wave)
-	get_node("HUD/BuildTowerButton").pressed.connect(build_tower)
-	
+	#building buttons
+	for i in get_tree().get_nodes_in_group("build_buttons"):
+		i.pressed.connect(tower_preview.bind(i.name))
+
+
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 func start_wave():
@@ -36,6 +40,26 @@ func enemy_reached_target():
 func enemy_hit(body):
 	body.queue_free()
 	kills += 1
+
+
+
+
+# Tower bau menü settings etc 
+var building
+var buildTower
+
+
+func tower_preview(buildTower):
+	var mouse_position = get_global_mouse_position()
+	var TowerPreNode = load("res://towers/" + buildTower + ".tscn").instantiate()
 	
-func build_tower():
-	self.add_child(towerScene.instantiate())
+	get_node("Towers").add_child(TowerPreNode)
+	TowerPreNode.set_name("PreviewTower")
+
+
+
+
+
+#Ende tower bau menü
+
+
