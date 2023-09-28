@@ -14,6 +14,7 @@ func _ready():
 	number = GameData.levels[self.get_name()]["number"]
 	wait = GameData.levels[self.get_name()]["wait"]
 	get_node("HUD/StartWaveButton").pressed.connect(start_wave)
+	get_node("HUD/ExitLevelButton").pressed.connect(exit_level)
 	#building buttons
 	for i in get_tree().get_nodes_in_group("build_buttons"):
 		i.pressed.connect(tower_preview.bind(i.name))
@@ -57,7 +58,10 @@ func tower_preview(buildTower):
 	TowerPreNode.set_name(buildTower)
 
 
-
+func exit_level():
+	for child in get_children(): child.queue_free()
+	get_tree().change_scene_to_file("res://interfaceScenes/menu.tscn")
+	self.queue_free()
 
 
 #Ende tower bau menü

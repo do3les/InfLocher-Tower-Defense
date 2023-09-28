@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://71shikfqxoqx"]
+[gd_scene load_steps=5 format=3 uid="uid://71shikfqxoqx"]
 
 [ext_resource type="Script" path="res://interfaceScenes/menu.gd" id="1_d4jp2"]
 [ext_resource type="Theme" uid="uid://detsu6arwhhvh" path="res://assets/mainTheme.tres" id="2_5cn45"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_be815"]
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_4oxa0"]
+events = [SubResource("InputEventKey_be815")]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_d4jp2")
@@ -22,4 +28,14 @@ offset_bottom = 290.0
 theme = ExtResource("2_5cn45")
 text = "Bsp Button Shop"
 
+[node name="BackButton" type="Button" parent="."]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 96.0
+offset_bottom = 97.0
+theme = ExtResource("2_5cn45")
+shortcut = SubResource("Shortcut_4oxa0")
+text = "<"
+
 [connection signal="pressed" from="Level1Button" to="." method="_on_buttonLvl1_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
