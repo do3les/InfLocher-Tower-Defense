@@ -4,6 +4,10 @@ Projektarbeit von dem Informatikkurs der KS2 am Gymnasium Überlingen.
 
 ---
 
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
+
+---
+
 - [ ] **Dateien**: camelCase
 - [ ] **Ordner**: camelCase
 - [ ] **Nodes**: PascalCase
