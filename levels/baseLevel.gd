@@ -54,7 +54,7 @@ func tower_preview(buildTower):
 	var TowerPreNode = load("res://towers/" + buildTower + ".tscn").instantiate()
 	
 	get_node("Towers").add_child(TowerPreNode)
-	TowerPreNode.set_name("PreviewTower")
+	TowerPreNode.set_name(buildTower)
 
 
 
