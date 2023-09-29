@@ -9,7 +9,7 @@ Projektarbeit von dem Informatikkurs der KS2 am Gymnasium Überlingen.
 [![OS - Windows](https://img.shields.io/badge/OS-Windows-blue?logo=windows&logoColor=white)](https://www.microsoft.com/ "Go to Microsoft homepage")    [![OS - Linux](https://img.shields.io/badge/OS-Linux-blue?logo=linux&logoColor=white)](https://www.linux.org/ "Go to Linux homepage")
 
 
-[![Issues](https://img.shields.io/github/issues/do3les/InfLocher-Tower-Defense)]()    [![Last Commit](https://img.shields.io/github/last-commit)]()
+[![Issues](https://img.shields.io/github/issues/do3les/InfLocher-Tower-Defense)]()    [![Last Commit](https://img.shields.io/github/last-commit/do3les/InfLocher-Tower-Defense)]()
 
 ---
 
