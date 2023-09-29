@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://cumkwsnn0o4d1"]
+[gd_scene load_steps=8 format=3 uid="uid://cumkwsnn0o4d1"]
 
 [ext_resource type="Theme" uid="uid://detsu6arwhhvh" path="res://assets/mainTheme.tres" id="1_1bl72"]
 [ext_resource type="Texture2D" uid="uid://de2ilm70ukkx4" path="res://assets/textureHealth.tres" id="2_3x3x7"]
 [ext_resource type="Script" path="res://interfaceScenes/healthProgressBar.gd" id="3_ymq8w"]
 [ext_resource type="Script" path="res://interfaceScenes/killsLabel.gd" id="4_5p21o"]
 [ext_resource type="Texture2D" uid="uid://cfqiceskhvumo" path="res://assets/basicTowerHead.svg" id="5_yvtse"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_c2qyx"]
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_yyl1v"]
+events = [SubResource("InputEventKey_c2qyx")]
 
 [node name="HUD" type="Node2D"]
 
@@ -42,7 +48,7 @@ offset_right = 1856.0
 offset_bottom = 192.0
 script = ExtResource("4_5p21o")
 
-[node name="basicTower" type="Button" parent="." groups=["build_buttons"]]
+[node name="BasicTower" type="Button" parent="." groups=["build_buttons"]]
 offset_left = 64.0
 offset_top = 906.0
 offset_right = 182.0
@@ -50,3 +56,11 @@ offset_bottom = 1024.0
 icon = ExtResource("5_yvtse")
 icon_alignment = 1
 expand_icon = true
+
+[node name="ExitLevelButton" type="Button" parent="."]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 96.0
+offset_bottom = 96.0
+shortcut = SubResource("Shortcut_yyl1v")
+text = "ESC"
