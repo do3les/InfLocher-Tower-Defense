@@ -4,7 +4,7 @@ Projektarbeit von dem Informatikkurs der KS2 am Gymnasium Überlingen.
 
 ---
 
-[![Godot - Engine](https://img.shields.io/badge/Godot-Engine-blue?logo=godot&logoColor=white)](https://godotengine.org)   ![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)
+[![Godot - Engine](https://img.shields.io/badge/Godot-Engine-blue?logo=godot-engine&logoColor=Blue)](https://godotengine.org)   ![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)
 
 ---
 
