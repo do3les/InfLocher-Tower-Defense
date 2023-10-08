@@ -45,15 +45,13 @@ func enemy_hit(body):
 
 
 
-# Tower bau menü settings etc 
+
 var building
-var buildTower
+
 
 
 func tower_preview(buildTower):
-	var mouse_position = get_global_mouse_position()
 	var TowerPreNode = load("res://towers/" + buildTower + ".tscn").instantiate()
-	
 	get_node("Towers").add_child(TowerPreNode)
 	TowerPreNode.set_name(buildTower)
 
@@ -64,6 +62,5 @@ func exit_level():
 	self.queue_free()
 
 
-#Ende tower bau menü
 
 
