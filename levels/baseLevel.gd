@@ -21,7 +21,7 @@ func _ready():
 	get_node("HUD/ExitLevelButton").pressed.connect(exit_level)
 	#building buttons
 	for i in get_tree().get_nodes_in_group("build_buttons"):
-		i.pressed.connect(tower_preview.bind(i.name))
+		i.pressed.connect(buildingTower.bind(i.name))
 
 
 
@@ -54,7 +54,7 @@ var building
 
 
 
-func tower_preview(buildTower):
+func buildingTower(buildTower):
 	if(coins <= 0):
 		return
 	var TowerPreNode = load("res://towers/" + buildTower + ".tscn").instantiate()

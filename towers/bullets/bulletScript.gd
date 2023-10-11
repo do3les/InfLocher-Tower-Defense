@@ -1,12 +1,13 @@
 extends CharacterBody2D
 
-var bulletSpeed
+var bulletSpeed = 1;
 var bulletDamage
 var bulletTravelTime
 var bulletPiercing
+var bulletType
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func ready():
 	bulletSpeed = GameData.bulletStats[self.get_name()]["bulletSpeed"]
 	bulletDamage = GameData.bulletStats[self.get_name()]["bulletDamage"]
 	bulletTravelTime = GameData.bulletStats[self.get_name()]["bulletTravelTime"]

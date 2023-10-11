@@ -5,21 +5,27 @@ var enemy
 var built = false
 var isReady = true
 var fireRate
+var bulletType
 
 func _process(_delta):
 	if enemyArray.size() != 0: #and built:
 		select_enemy()
 		turn()
 		if isReady:
-			shoot()
+			shoot(bulletType)
 	elif not built:
 		enemy = null
 		self.position = get_viewport().get_mouse_position()
 
-func shoot():
+
+
+@warning_ignore("shadowed_variable")
+func shoot(bulletType):
 	isReady = false 
 	#print("shoot")
-	
+	var bulletPreNode = load("res://towers/bullets/" + bulletType + ".tscn").instantiate()
+	get_node("/root/Level1/Bullet").add_child(bulletPreNode)
+	bulletPreNode.set_name(bulletType)
 	await  get_tree().create_timer(fireRate).timeout
 	isReady = true
 
@@ -32,6 +38,7 @@ func _input(event):
 func _ready():
 	self.get_node("Range/CollisionShape2D").get_shape().radius = GameData.towerStats[self.get_name()]["range"]
 	fireRate = GameData.towerStats[self.get_name()]["fireRate"]
+	bulletType = GameData.towerStats[self.get_name()]["bulletType"]
 	# crashes with multiple instances, because two instances don't have the same name, only the first is called BasicTower
 
 func select_enemy():
