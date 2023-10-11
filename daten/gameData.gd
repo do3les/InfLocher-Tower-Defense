@@ -3,19 +3,34 @@ extends Node
 
 var towerStats = {
 	"BasicTower":{
-		"fireRate": 1,
-		"damge": 10,
-		"range": 300
+		"fireRate": 1.0,
+		"bulletType": "basicBullet",
+		"range": 300.0
 		}
 		}
+
+var bulletStats = {
+	"basicBullet": {
+		"bulletDamage": 50.0,
+		"bulletSpeed": 2500.0,
+		"bulletTravelTime": 4.0,
+		"bulletPiercing": 0.0,
+		# weitere auflistung eigenschaften wie damage type möglich (vlt. nicht auf der basic bullet)
+	}
+	
+	
+	
+
+}
 
 
 var levels = {
 	"Level1":{
 		"enemy":"basicEnemy",
-		"number":10,
+		"number":10.0,
 		"wait":0.1,
-		"start_coins":100
+		"start_coins":100.0,
+		"health": 100.0,
 	}
 }
 

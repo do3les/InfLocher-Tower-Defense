@@ -18,7 +18,8 @@ func _process(_delta):
 
 func shoot():
 	isReady = false 
-	print("shoot")
+	#print("shoot")
+	
 	await  get_tree().create_timer(fireRate).timeout
 	isReady = true
 

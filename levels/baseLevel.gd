@@ -3,6 +3,7 @@ extends Node2D
 var health = 100
 var enemy
 var towerScene
+var bulletScene
 var number = 0
 var wait = 0
 var kills = 0
@@ -12,6 +13,7 @@ var coins = 0
 func _ready():
 	enemy = load("res://enemy/" + GameData.levels[self.get_name()]["enemy"] + ".tscn")
 	towerScene = preload("res://towers/basicTower.tscn")
+	bulletScene = preload("res://towers/bullets/basicBullet.tscn")
 	number = GameData.levels[self.get_name()]["number"]
 	wait = GameData.levels[self.get_name()]["wait"]
 	coins = GameData.levels[self.get_name()]["start_coins"]
