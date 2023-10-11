@@ -6,6 +6,7 @@ var towerScene
 var number = 0
 var wait = 0
 var kills = 0
+var coins = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,6 +14,7 @@ func _ready():
 	towerScene = preload("res://towers/basicTower.tscn")
 	number = GameData.levels[self.get_name()]["number"]
 	wait = GameData.levels[self.get_name()]["wait"]
+	coins = GameData.levels[self.get_name()]["start_coins"]
 	get_node("HUD/StartWaveButton").pressed.connect(start_wave)
 	get_node("HUD/ExitLevelButton").pressed.connect(exit_level)
 	#building buttons
@@ -51,9 +53,12 @@ var building
 
 
 func tower_preview(buildTower):
+	if(coins <= 0):
+		return
 	var TowerPreNode = load("res://towers/" + buildTower + ".tscn").instantiate()
 	get_node("Towers").add_child(TowerPreNode)
 	TowerPreNode.set_name(buildTower)
+	coins -= 10
 
 
 func exit_level():

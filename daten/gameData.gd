@@ -14,7 +14,8 @@ var levels = {
 	"Level1":{
 		"enemy":"basicEnemy",
 		"number":10,
-		"wait":0.1
+		"wait":0.1,
+		"start_coins":100
 	}
 }
 

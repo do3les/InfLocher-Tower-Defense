@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cumkwsnn0o4d1"]
+[gd_scene load_steps=9 format=3 uid="uid://cumkwsnn0o4d1"]
 
 [ext_resource type="Theme" uid="uid://detsu6arwhhvh" path="res://assets/mainTheme.tres" id="1_1bl72"]
 [ext_resource type="Texture2D" uid="uid://de2ilm70ukkx4" path="res://assets/textureHealth.tres" id="2_3x3x7"]
 [ext_resource type="Script" path="res://interfaceScenes/healthProgressBar.gd" id="3_ymq8w"]
 [ext_resource type="Script" path="res://interfaceScenes/killsLabel.gd" id="4_5p21o"]
 [ext_resource type="Texture2D" uid="uid://cfqiceskhvumo" path="res://assets/basicTowerHead.svg" id="5_yvtse"]
+[ext_resource type="Script" path="res://interfaceScenes/coinsLabel.gd" id="6_83f2k"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_c2qyx"]
 keycode = 4194305
@@ -42,10 +43,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="KillsLabel" type="Label" parent="."]
-offset_left = 1792.0
-offset_top = 128.0
+offset_left = 1664.0
+offset_top = 192.0
 offset_right = 1856.0
-offset_bottom = 192.0
+offset_bottom = 256.0
 script = ExtResource("4_5p21o")
 
 [node name="basicTower" type="Button" parent="." groups=["build_buttons"]]
@@ -64,3 +65,10 @@ offset_right = 96.0
 offset_bottom = 96.0
 shortcut = SubResource("Shortcut_yyl1v")
 text = "ESC"
+
+[node name="CoinsLabel" type="Label" parent="."]
+offset_left = 1664.0
+offset_top = 256.0
+offset_right = 1856.0
+offset_bottom = 320.0
+script = ExtResource("6_83f2k")
