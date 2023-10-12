@@ -3,7 +3,6 @@ extends Node2D
 var health = 100
 var enemy
 var towerScene
-var bulletScene
 var number = 0
 var wait = 0
 var kills = 0
@@ -13,7 +12,6 @@ var coins = 0
 func _ready():
 	enemy = load("res://enemy/" + GameData.levels[self.get_name()]["enemy"] + ".tscn")
 	towerScene = preload("res://towers/basicTower.tscn")
-	bulletScene = preload("res://towers/bullets/basicBullet.tscn")
 	number = GameData.levels[self.get_name()]["number"]
 	wait = GameData.levels[self.get_name()]["wait"]
 	coins = GameData.levels[self.get_name()]["start_coins"]
@@ -21,7 +19,7 @@ func _ready():
 	get_node("HUD/ExitLevelButton").pressed.connect(exit_level)
 	#building buttons
 	for i in get_tree().get_nodes_in_group("build_buttons"):
-		i.pressed.connect(buildingTower.bind(i.name))
+		i.pressed.connect(building_tower.bind(i.name))
 
 
 
@@ -54,7 +52,7 @@ var building
 
 
 
-func buildingTower(buildTower):
+func building_tower(buildTower):
 	if(coins <= 0):
 		return
 	var TowerPreNode = load("res://towers/" + buildTower + ".tscn").instantiate()

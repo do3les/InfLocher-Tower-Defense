@@ -27,5 +27,7 @@ flip_h = true
 [node name="TowerHead" type="Marker2D" parent="BasicTowerHead"]
 position = Vector2(16, 0)
 
+[node name="Bullets" type="Node2D" parent="."]
+
 [connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
 [connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]

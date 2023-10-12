@@ -7,15 +7,21 @@ var towerStats = {
 		"damge": 10,
 		"range": 300,
 		"bulletType": "basicBullet",
-		"fireRate": 1.0,
-		"bulletType": "basicBullet",
-		"range": 300.0
+		}
+}
 
-		}
-		}
+var collisonDetection = {
+	"BasicEnemyC": {
+		"istGegner": "gegner",
+	}
+	"basicBullet": {
+		"istGegner": "keinGegner",
+	}
+}
 
 var bulletStats = {
 	"BasicBullet": {
+		"istGegner": "keinGegner",
 		"bulletDamage": 50.0,
 		"bulletSpeed": 2500.0,
 		"bulletTravelTime": 4.0,
@@ -27,10 +33,10 @@ var bulletStats = {
 var levels = {
 	"Level1":{
 		"enemy":"basicEnemy",
-		"number":10.0,
+		"number":10,
 		"wait":0.1,
-		"start_coins":100.0,
-		"health": 100.0,
+		"start_coins":100
 	}
+	
 }
 

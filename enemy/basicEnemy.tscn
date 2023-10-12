@@ -10,12 +10,12 @@ radius = 8.0
 loop = false
 script = ExtResource("1_gqt03")
 
-[node name="Body" type="CharacterBody2D" parent="."]
+[node name="BasicEnemyC" type="CharacterBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BasicEnemyC"]
 shape = SubResource("CircleShape2D_vst0h")
 
-[node name="Icon" type="Sprite2D" parent="Body"]
+[node name="Icon" type="Sprite2D" parent="BasicEnemyC"]
 position = Vector2(3.57628e-07, 2.38419e-07)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_33ksv")
