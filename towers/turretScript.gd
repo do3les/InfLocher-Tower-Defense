@@ -7,6 +7,8 @@ var isReady = true
 var fireRate
 var bulletType
 
+var bulletType
+
 func _process(_delta):
 	if enemyArray.size() != 0: #and built:
 		select_enemy()
@@ -18,14 +20,13 @@ func _process(_delta):
 		self.position = get_viewport().get_mouse_position()
 
 
-
-@warning_ignore("shadowed_variable")
 func shoot(bulletType):
 	isReady = false 
-	#print("shoot")
 	var bulletPreNode = load("res://towers/bullets/" + bulletType + ".tscn").instantiate()
-	get_node("/root/Level1/Bullet").add_child(bulletPreNode)
+	get_node("/root/Level1/Bullets").add_child(bulletPreNode)
 	bulletPreNode.set_name(bulletType)
+	#print("shoot")
+
 	await  get_tree().create_timer(fireRate).timeout
 	isReady = true
 
