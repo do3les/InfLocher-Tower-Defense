@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bj33742gqt0y"]
+[gd_scene load_steps=6 format=3 uid="uid://bj33742gqt0y"]
 
 [ext_resource type="Script" path="res://levels/level1.gd" id="1_0ff16"]
 [ext_resource type="PackedScene" uid="uid://bictxwblu0emk" path="res://path/path.tscn" id="2_5ilm6"]
 [ext_resource type="PackedScene" uid="uid://cumkwsnn0o4d1" path="res://interfaceScenes/gameHUD.tscn" id="3_gcw7q"]
+[ext_resource type="PackedScene" uid="uid://d0ghevqj54c0i" path="res://towers/bullets/basicBullet.tscn" id="4_hinga"]
+
 
 [sub_resource type="Curve2D" id="Curve2D_x63fs"]
 resource_local_to_scene = true
@@ -17,6 +19,7 @@ script = ExtResource("1_0ff16")
 
 [node name="Path" parent="." instance=ExtResource("2_5ilm6")]
 position = Vector2(496, 352)
+
 curve = SubResource("Curve2D_x63fs")
 
 [node name="HUD" parent="." instance=ExtResource("3_gcw7q")]
