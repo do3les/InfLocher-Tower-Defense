@@ -13,7 +13,7 @@ var towerStats = {
 var collisonDetection = {
 	"BasicEnemyC": {
 		"istGegner": "gegner",
-	}
+	},
 	"basicBullet": {
 		"istGegner": "keinGegner",
 	}
