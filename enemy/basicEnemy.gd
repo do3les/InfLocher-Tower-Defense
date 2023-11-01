@@ -17,4 +17,8 @@ func _physics_process(delta):
 		reached_target.emit()
 		queue_free()
 
+func on_hit():
+	get_parent().get_parent().kills += 1
+	get_parent().get_parent().coins += 10
+	queue_free()
 

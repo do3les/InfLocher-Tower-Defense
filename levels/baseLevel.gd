@@ -40,12 +40,6 @@ func start_wave():
 func enemy_reached_target():
 	health -= 5
 
-func enemy_hit(body):
-	body.queue_free()
-	kills += 1
-
-
-
 
 
 var building
