@@ -22,7 +22,7 @@ func shoot(bulletType):
 	isReady = false 
 	var bulletSpawnPoint = get_node("TowerBase").global_position
 	var towerHead = get_node("BasicTowerHead/TowerHead").global_position
-	bullet = load("res://towers/bullets/" + bulletType + ".tscn").instantiate()
+	bullet = load("res://towers/Bullets/" + bulletType + ".tscn").instantiate()
 	var direktion = (towerHead - bulletSpawnPoint)
 	var winkel = direktion.normalized()
 	get_node("Bullets").add_child(bullet)
@@ -66,7 +66,7 @@ func turn():
 	
 
 func _on_range_body_entered(body):
-	if built && GameData.collisonDetection[body.get_name()]["istGegner"] == "gegner":
+	if built && GameData.collisonDetection[body.get_child(0).get_name()]["istGegner"] == "gegner":
 		enemyArray.append(body.get_parent())
 
 
