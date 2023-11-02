@@ -1,4 +1,4 @@
-extends "res://towers/turretScript.gd"
+extends "res://towers/towerScript.gd"
 
 
 func _physics_process(delta):

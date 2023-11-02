@@ -1,4 +1,5 @@
 extends PathFollow2D
+# ToDo: Make enemyScript and extend from there
 
 signal reached_target
 
@@ -20,5 +21,7 @@ func _physics_process(delta):
 func on_hit():
 	get_parent().get_parent().kills += 1
 	get_parent().get_parent().coins += 10
+	# ToDo: Allow for variable number of coins
+	
 	queue_free()
 
