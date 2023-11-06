@@ -1,8 +1,9 @@
-extends Node
+extends Node2D
 
 
 func _ready():
 	print("error not overwritten")
+	loadButtons()
 	#Funtion to overwrite ----> to get var's
 	pass
 
@@ -17,14 +18,24 @@ func _process(delta):
 
 
 # # # Constructing related block
+var price
 
+func loadButtons():
+	for i in get_tree().get_nodes_in_group("built_Tower_Groupe"):
+		i.pressed.connect(buildTower.bind(i.getType()))
+		price = i.getPrice()
 
+func buildTower(towerToBuild):
+	if (get_parent().coins > price):
+		var towerInstance = load(towerToBuild)
+		add_child(towerInstance)
+		get_parent().coins -= price
+	pass
 
 
 
 
 # # # Fighting related block
-
 
 
 #recognition of the enemy

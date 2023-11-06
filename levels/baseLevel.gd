@@ -18,7 +18,7 @@ func _ready():
 	enemy = load("res://enemy/" + GameData.levels[self.get_name()]["enemy"] + ".tscn")
 	# ToDo: Rewrite to allow for multiple enemy classes
 	
-	towerScene = preload("res://towers/basicTower.tscn")
+	towerScene = preload("res://towers/shooter/Shooter.tscn")
 	# ToDo: Move to tower build button
 	
 	numberOfEnemies = GameData.levels[self.get_name()]["numberOfEnemies"]
@@ -30,10 +30,7 @@ func _ready():
 	get_node("HUD/StartWaveButton").pressed.connect(start_wave)
 	get_node("HUD/ExitLevelButton").pressed.connect(exit_level)
 	
-	#building buttons
-	for i in get_tree().get_nodes_in_group("build_buttons"):
-		i.pressed.connect(building_tower.bind(i.name))
-	# ToDo: How robust is this? Needs multiple Tower types to be properly tested.
+	load("res://towers/Tower.gd")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
