@@ -1,14 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://boefrkplkw5pq"]
 
-[ext_resource type="Script" path="res://towers/basicTower.gd" id="1_sr7oo"]
+[ext_resource type="Script" path="res://towers/shooter.gd" id="1_wryeb"]
 [ext_resource type="Texture2D" uid="uid://dna35p43t8k2m" path="res://assets/towerBase.svg" id="2_wik43"]
 [ext_resource type="Texture2D" uid="uid://cfqiceskhvumo" path="res://assets/basicTowerHead.svg" id="3_ith8j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jpl4i"]
 radius = 0.01
 
-[node name="BasicTower" type="Node2D"]
-script = ExtResource("1_sr7oo")
+[node name="Shooter" type="Node2D"]
+script = ExtResource("1_wryeb")
 
 [node name="Range" type="Area2D" parent="."]
 
@@ -20,11 +20,11 @@ debug_color = Color(0.501961, 0.541176, 0.580392, 0.419608)
 [node name="TowerBase" type="Sprite2D" parent="."]
 texture = ExtResource("2_wik43")
 
-[node name="BasicTowerHead" type="Sprite2D" parent="."]
+[node name="TowerHead" type="Sprite2D" parent="."]
 texture = ExtResource("3_ith8j")
 flip_h = true
 
-[node name="TowerHead" type="Marker2D" parent="BasicTowerHead"]
+[node name="GunBarrel" type="Marker2D" parent="TowerHead"]
 position = Vector2(16, 0)
 
 [node name="Bullets" type="Node2D" parent="."]
