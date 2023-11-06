@@ -18,7 +18,7 @@ offset_top = 217.0
 offset_right = 306.0
 offset_bottom = 285.0
 theme = ExtResource("2_5cn45")
-text = "Bsp Button lvl 1"
+text = "Level 1"
 
 [node name="ShopButton" type="Button" parent="."]
 offset_left = 481.0

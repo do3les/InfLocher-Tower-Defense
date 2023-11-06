@@ -33,8 +33,8 @@ var bulletStats = {
 var levels = {
 	"Level1":{
 		"enemy":"basicEnemy",
-		"number":10,
-		"wait":0.1,
+		"numberOfEnemies":10,
+		"enemyFrequency":10,
 		"start_coins":100
 	}
 	

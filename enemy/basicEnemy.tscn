@@ -12,7 +12,7 @@ script = ExtResource("1_gqt03")
 
 [node name="BasicEnemyC" type="CharacterBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BasicEnemyC"]
+[node name="BasicEnemyC" type="CollisionShape2D" parent="BasicEnemyC"]
 shape = SubResource("CircleShape2D_vst0h")
 
 [node name="Icon" type="Sprite2D" parent="BasicEnemyC"]
