@@ -7,7 +7,7 @@ func _ready():
 	tower = "res://towers/shooter/Shooter.tscn"
 	price = 10
 
-func getType():
+func get_Type():
 	return tower 
 
 func getPrice():

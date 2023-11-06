@@ -18,7 +18,7 @@ func _ready():
 	enemy = load("res://enemy/" + GameData.levels[self.get_name()]["enemy"] + ".tscn")
 	# ToDo: Rewrite to allow for multiple enemy classes
 	
-	towerScene = preload("res://towers/shooter/Shooter.tscn")
+	preload("res://towers/shooter/Shooter.tscn")
 	# ToDo: Move to tower build button
 	
 	numberOfEnemies = GameData.levels[self.get_name()]["numberOfEnemies"]
@@ -31,6 +31,12 @@ func _ready():
 	get_node("HUD/ExitLevelButton").pressed.connect(exit_level)
 	
 	load("res://towers/Tower.gd")
+	var spawnen = false
+	while spawnen == false:
+		spawnen = true
+		start_wave()
+		await get_tree().create_timer(5.0).timeout
+		spawnen = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -66,7 +72,3 @@ func exit_level():
 	for child in get_children(): child.queue_free()
 	get_tree().change_scene_to_file("res://interfaceScenes/menu.tscn")
 	self.queue_free()
-
-
-
-

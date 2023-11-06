@@ -1,38 +1,41 @@
 extends Node2D
 
+var built = true
 
 func _ready():
-	print("error not overwritten")
+	print("error not overwritten 1")
 	loadButtons()
 	#Funtion to overwrite ----> to get var's
-	pass
 
 # # Variables are listed where they are first used
 
 # If possible, only use the function _process with entire methods.
 # ----> allows you to overwrite the function without losing the methods specified in there.
 
-func _process(delta):
-	shoot()
-
-
-
 # # # Constructing related block
 var price
 
 func loadButtons():
+	print("hi")
 	for i in get_tree().get_nodes_in_group("built_Tower_Groupe"):
-		i.pressed.connect(buildTower.bind(i.getType()))
+		i.pressed.connect(buildTower.bind(i.get_Type()))
 		price = i.getPrice()
 
 func buildTower(towerToBuild):
-	if (get_parent().coins > price):
-		var towerInstance = load(towerToBuild)
+	if (get_node("/root/Level1").coins >= price):
+		var towerInstance = load(towerToBuild).instantiate()
 		add_child(towerInstance)
-		get_parent().coins -= price
-	pass
+		get_node("/root/Level1").coins -= price
+
+func _input(event):
+	if event is InputEventMouseButton and not built:
+		built = true
+		self.position = event.position
 
 
+func range(number):
+	print("ok")
+	self.get_node("Range/CollisionShape2D").get_shape().radius = number
 
 
 # # # Fighting related block
@@ -44,12 +47,12 @@ var enemyArray = []
 #In progress needs  
 
 func _on_range_body_entered(body):
-	if 0 == 0: #jsniofjv is still being implemented
+	if GameData.collisonDetection[body.get_child(0).get_name()]["istGegner"] == "gegner":
 		enemyArray.append(body.get_parent())
 
 
 func _on_range_body_exited(body):
-	if 1 == 0: #jsniofjv is still being implemented:
+	if (GameData.collisonDetection[body.get_child(0).get_name()]["istGegner"] == "gegner"):
 		enemyArray.erase(body.get_parent())
 
 
@@ -67,8 +70,6 @@ func custom_enemy_sort_by_progress(a, b):
 			return true;
 
 
-
-
 var enemy
 
 func select_enemy():
@@ -76,13 +77,9 @@ func select_enemy():
 	enemy = enemyArray[-1]
 
 
-
-
 func turn():
-	get_node("TowerHead").look_at(enemy.position + enemy.get_parent().position)
-
-
-
+	#get_node("TowerHead").look_at(enemy.position + enemy.get_parent().position)
+	pass
 
 var isReady = true
 var bullet
@@ -107,7 +104,7 @@ func spawnBullet(bulletType):
 	await  get_tree().create_timer(fireRate).timeout
 	isReady = true
 
-var built
+
 func shoot():
 	if enemyArray.size() > 0 and built:
 		select_enemy()

@@ -4,9 +4,15 @@ extends "res://towers/Tower.gd"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("overwritten")
-	loadButtons()
+	built = false
+	print(self)
+	range(300)
+	fireRate = 1
+	print("done")
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if not built:
+		self.position = get_viewport().get_mouse_position()
+	else:
+		turn()
+		#shoot()

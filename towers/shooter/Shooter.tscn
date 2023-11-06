@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://cfqiceskhvumo" path="res://assets/basicTowerHead.svg" id="3_am5qb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jpl4i"]
-radius = 0.01
 
 [node name="Shooter" type="Node2D"]
 script = ExtResource("1_ke8gq")
