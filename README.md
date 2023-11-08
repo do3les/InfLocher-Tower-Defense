@@ -16,7 +16,7 @@ Projektarbeit von dem Informatikkurs der KS2 am Gymnasium Überlingen.
 - [ ] **Dateien**: camelCase
 - [ ] **Ordner**: camelCase
 - [ ] **Nodes**: PascalCase
-- [ ] **Klassen**(falls wir sie wirklich brauchen): PascalCase
+- [ ] **Klassen**(falls wir sie wirklich brauchen): PascalCase (Übergeordente parent Skripts)
 - [ ] **Funktionen**: snake_case
 - [ ] **Variablen**: camelCase
 - [ ] **Konstanten**: ALL_CAPS
