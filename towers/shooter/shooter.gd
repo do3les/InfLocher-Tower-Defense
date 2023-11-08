@@ -6,7 +6,7 @@ func _ready():
 	print("overwritten")
 	built = false
 	print(self)
-	range(300)
+	setTowerRange(300)
 	fireRate = 1
 	print("done")
 

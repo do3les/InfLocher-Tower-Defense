@@ -33,7 +33,7 @@ func _input(event):
 		self.position = event.position
 
 
-func range(number):
+func setTowerRange(number):
 	print("ok")
 	self.get_node("Range/CollisionShape2D").get_shape().radius = number
 
