@@ -5,14 +5,13 @@ extends "res://towers/Tower.gd"
 func _ready():
 	print("overwritten")
 	built = false
-	print(self)
 	setTowerRange(300)
 	fireRate = 1
+	bulletType = "res://towers/bullets/basicBullet.tscn"
 	print("done")
 
 func _process(delta):
 	if not built:
 		self.position = get_viewport().get_mouse_position()
 	else:
-		turn()
-		#shoot()
+		shoot()

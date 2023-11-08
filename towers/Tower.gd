@@ -12,11 +12,13 @@ func _ready():
 # If possible, only use the function _process with entire methods.
 # ----> allows you to overwrite the function without losing the methods specified in there.
 
+
+
+
 # # # Constructing related block
 var price
 
 func loadButtons():
-	print("hi")
 	for i in get_tree().get_nodes_in_group("built_Tower_Groupe"):
 		i.pressed.connect(buildTower.bind(i.get_Type()))
 		price = i.getPrice()
@@ -34,8 +36,10 @@ func _input(event):
 
 
 func setTowerRange(number):
-	print("ok")
 	self.get_node("Range/CollisionShape2D").get_shape().radius = number
+
+
+
 
 
 # # # Fighting related block
@@ -59,6 +63,19 @@ func _on_range_body_exited(body):
 
 
 #targeting the enemy
+var enemy
+
+func shoot():
+	if enemyArray.size() > 0 and built:
+		select_enemy()
+		turn()
+		if isReady:
+			spawnBullet(bulletType)
+
+func select_enemy():
+	enemyArray.sort_custom(custom_enemy_sort_by_progress)
+	enemy = enemyArray[-1]
+
 
 func custom_enemy_sort_by_progress(a, b):
 	if typeof(a) == typeof(b):
@@ -70,22 +87,17 @@ func custom_enemy_sort_by_progress(a, b):
 			return true;
 
 
-var enemy
-
-func select_enemy():
-	enemyArray.sort_custom(custom_enemy_sort_by_progress)
-	enemy = enemyArray[-1]
-
 
 func turn():
-	#get_node("TowerHead").look_at(enemy.position + enemy.get_parent().position)
-	pass
+	get_node("TowerHead").look_at(enemy.position + enemy.get_parent().position)
 
+
+var bulletType
+#bulletType = path to the bullet that the tower shoots
 var isReady = true
 var bullet
-#bulletType = path to the bullet that the tower shoots
-var bulletType
 var fireRate
+
 
 func spawnBullet(bulletType):
 	isReady = false
@@ -94,7 +106,6 @@ func spawnBullet(bulletType):
 	var towerHead = get_node("TowerHead/GunBarrel").global_position
 	var richtung = (towerHead - bulletSpawnPoint)
 	var winkel = richtung.normalized()
-	
 	#pass the attributes to bullet
 	bullet = load(bulletType).instantiate()
 	get_node("Bullets").add_child(bullet)
@@ -103,11 +114,3 @@ func spawnBullet(bulletType):
 	#waiting till ready to shoot agein
 	await  get_tree().create_timer(fireRate).timeout
 	isReady = true
-
-
-func shoot():
-	if enemyArray.size() > 0 and built:
-		select_enemy()
-		turn()
-		if isReady:
-			spawnBullet(bulletType)
