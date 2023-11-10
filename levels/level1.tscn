@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bictxwblu0emk" path="res://path/path.tscn" id="2_5ilm6"]
 [ext_resource type="PackedScene" uid="uid://cumkwsnn0o4d1" path="res://interfaceScenes/gameHUD.tscn" id="3_gcw7q"]
 
-[sub_resource type="Curve2D" id="Curve2D_s3hto"]
+[sub_resource type="Curve2D" id="Curve2D_fg0yi"]
 resource_local_to_scene = true
 bake_interval = 64.0
 _data = {
@@ -17,7 +17,7 @@ script = ExtResource("1_0ff16")
 
 [node name="Path" parent="." instance=ExtResource("2_5ilm6")]
 position = Vector2(496, 352)
-curve = SubResource("Curve2D_s3hto")
+curve = SubResource("Curve2D_fg0yi")
 
 [node name="HUD" parent="." instance=ExtResource("3_gcw7q")]
 
