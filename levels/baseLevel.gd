@@ -1,30 +1,25 @@
 extends Node2D
 
-var health = 100
+
+var building
 var enemy
 var towerScene
 var numberOfEnemies = 0
 var enemyFrequency = 0
 var kills = 0
 var coins = 0
-var building
-# ToDo: Organize
+var health = 100
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	# ToDo: Remove unneded newlines when done
-	
 	enemy = load("res://enemy/" + GameData.levels[self.get_name()]["enemy"] + ".tscn")
 	# ToDo: Rewrite to allow for multiple enemy classes
 	
 	preload("res://towers/shooter/Shooter.tscn")
 	# ToDo: Move to tower build button
 	
-	numberOfEnemies = GameData.levels[self.get_name()]["numberOfEnemies"]
-	
+	numberOfEnemies = GameData.levels[self.get_name()]["numberOfEnemies"]	
 	enemyFrequency = GameData.levels[self.get_name()]["enemyFrequency"]
-	
 	coins = GameData.levels[self.get_name()]["start_coins"]
 	
 	get_node("HUD/StartWaveButton").pressed.connect(start_wave)
@@ -50,7 +45,7 @@ func start_wave():
 		get_node("Path").add_child(enemyInstance)
 		enemyInstance.reached_target.connect(enemy_reached_target)
 		await get_tree().create_timer(1 / enemyFrequency).timeout
-		# ToDo: Does this work? I changed it to using frequency instead of time.
+
 
 
 func enemy_reached_target():
