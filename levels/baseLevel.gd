@@ -14,9 +14,6 @@ var health = 100
 func _ready():
 	enemy = load("res://enemy/" + GameData.levels[self.get_name()]["enemy"] + ".tscn")
 	# ToDo: Rewrite to allow for multiple enemy classes
-
-	towerScene = preload("res://towers/basicTower.tscn")
-	# ToDo: Move to tower build button
 	
 	numberOfEnemies = GameData.levels[self.get_name()]["numberOfEnemies"]	
 	enemyFrequency = GameData.levels[self.get_name()]["enemyFrequency"]
@@ -25,10 +22,13 @@ func _ready():
 	get_node("HUD/StartWaveButton").pressed.connect(start_wave)
 	get_node("HUD/ExitLevelButton").pressed.connect(exit_level)
 	
-	#building buttons
-	for i in get_tree().get_nodes_in_group("build_buttons"):
-		i.pressed.connect(building_tower.bind(i.name))
-	# ToDo: How robust is this? Needs multiple Tower types to be properly tested.
+	load("res://towers/Tower.gd")
+	var spawnen = false
+	while spawnen == false:
+		spawnen = true
+		start_wave()
+		await get_tree().create_timer(5.0).timeout
+		spawnen = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -50,21 +50,7 @@ func enemy_reached_target():
 	# ToDo: Is this all we do here? This could be moved into the enemy.
 
 
-func building_tower(buildTower):
-	if(coins < 10):
-		return
-	var towerInstance = load("res://towers/" + buildTower + ".tscn").instantiate()
-	get_node("Towers").add_child(towerInstance)
-	towerInstance.set_name(buildTower)
-	coins -= 10
-	# ToDo: Variable Tower price!!!
-
-
 func exit_level():
 	for child in get_children(): child.queue_free()
 	get_tree().change_scene_to_file("res://interfaceScenes/menu.tscn")
 	self.queue_free()
-
-
-
-
