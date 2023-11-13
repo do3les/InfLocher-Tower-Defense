@@ -1,11 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cumkwsnn0o4d1"]
+[gd_scene load_steps=8 format=3 uid="uid://cumkwsnn0o4d1"]
 
 [ext_resource type="Theme" uid="uid://detsu6arwhhvh" path="res://assets/mainTheme.tres" id="1_1bl72"]
+[ext_resource type="Script" path="res://interfaceScenes/gameHUD.gd" id="1_utb1h"]
 [ext_resource type="Texture2D" uid="uid://de2ilm70ukkx4" path="res://assets/textureHealth.tres" id="2_3x3x7"]
-[ext_resource type="Script" path="res://interfaceScenes/healthProgressBar.gd" id="3_ymq8w"]
-[ext_resource type="Script" path="res://interfaceScenes/killsLabel.gd" id="4_5p21o"]
 [ext_resource type="Texture2D" uid="uid://cfqiceskhvumo" path="res://assets/basicTowerHead.svg" id="5_yvtse"]
-[ext_resource type="Script" path="res://interfaceScenes/coinsLabel.gd" id="6_83f2k"]
 [ext_resource type="Script" path="res://interfaceScenes/towerButtonSkripts/shooterButton.gd" id="6_pv2u8"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_c2qyx"]
@@ -15,6 +13,7 @@ keycode = 4194305
 events = [SubResource("InputEventKey_c2qyx")]
 
 [node name="HUD" type="Node2D"]
+script = ExtResource("1_utb1h")
 
 [node name="StartWaveButton" type="Button" parent="."]
 offset_left = 1536.0
@@ -32,7 +31,6 @@ offset_bottom = 128.0
 value = 75.0
 nine_patch_stretch = true
 texture_progress = ExtResource("2_3x3x7")
-script = ExtResource("3_ymq8w")
 
 [node name="HealthLabel" type="Label" parent="HealthBar"]
 layout_mode = 0
@@ -48,7 +46,6 @@ offset_left = 1664.0
 offset_top = 192.0
 offset_right = 1856.0
 offset_bottom = 256.0
-script = ExtResource("4_5p21o")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -86,4 +83,3 @@ offset_left = 1664.0
 offset_top = 256.0
 offset_right = 1856.0
 offset_bottom = 320.0
-script = ExtResource("6_83f2k")
