@@ -1,10 +1,9 @@
 extends Node2D
 
-var built = true
+var built = false
 
 func _ready():
 	print("error not overwritten 1")
-	loadButtons()
 	#Funtion to overwrite ----> to get var's
 
 # # Variables are listed where they are first used
@@ -12,22 +11,6 @@ func _ready():
 # If possible, only use the function _process with entire methods.
 # ----> allows you to overwrite the function without losing the methods specified in there.
 
-
-
-
-# # # Constructing related block
-var price
-
-func loadButtons():
-	for i in get_tree().get_nodes_in_group("built_Tower_Groupe"):
-		i.pressed.connect(buildTower.bind(i.get_Type()))
-		price = i.getPrice()
-
-func buildTower(towerToBuild):
-	if (get_node("/root/Level1").coins >= price):
-		var towerInstance = load(towerToBuild).instantiate()
-		add_child(towerInstance)
-		get_node("/root/Level1").coins -= price
 
 func _input(event):
 	if event is InputEventMouseButton and not built:
@@ -37,9 +20,6 @@ func _input(event):
 
 func setTowerRange(number):
 	self.get_node("Range/CollisionShape2D").get_shape().radius = number
-
-
-
 
 
 # # # Fighting related block

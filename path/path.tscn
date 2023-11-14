@@ -1,10 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bictxwblu0emk"]
+[gd_scene load_steps=6 format=3 uid="uid://bictxwblu0emk"]
 
+[ext_resource type="Script" path="res://path/path.gd" id="1_840v8"]
 [ext_resource type="Texture2D" uid="uid://d2iq5681ug1es" path="res://assets/texturePath.tres" id="1_a53yf"]
-[ext_resource type="Script" path="res://path/pathLine.gd" id="2_kxjq8"]
 [ext_resource type="Texture2D" uid="uid://dh7erh4n4d5q" path="res://assets/iconSkeleton.svg" id="3_lme0r"]
-[ext_resource type="Script" path="res://path/startButton.gd" id="4_7w2pn"]
-[ext_resource type="Script" path="res://path/targetButton.gd" id="6_ns3of"]
 [ext_resource type="Texture2D" uid="uid://cx8ulskjqhvo7" path="res://assets/icon.svg" id="7_5vna5"]
 
 [sub_resource type="Curve2D" id="Curve2D_533h5"]
@@ -18,12 +16,12 @@ point_count = 13
 [node name="Path" type="Path2D"]
 position = Vector2(-16, 8)
 curve = SubResource("Curve2D_533h5")
+script = ExtResource("1_840v8")
 
 [node name="PathLine" type="Line2D" parent="."]
 width = 50.0
 texture = ExtResource("1_a53yf")
 texture_mode = 1
-script = ExtResource("2_kxjq8")
 
 [node name="Start" type="Button" parent="."]
 anchors_preset = 8
@@ -40,7 +38,6 @@ grow_vertical = 2
 icon = ExtResource("3_lme0r")
 icon_alignment = 1
 expand_icon = true
-script = ExtResource("4_7w2pn")
 
 [node name="Target" type="Button" parent="."]
 offset_left = -32.0
@@ -50,4 +47,3 @@ offset_bottom = 120.0
 icon = ExtResource("7_5vna5")
 icon_alignment = 1
 expand_icon = true
-script = ExtResource("6_ns3of")
