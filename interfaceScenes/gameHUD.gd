@@ -15,3 +15,4 @@ func _process(delta):
 	
 	get_node("CoinsLabel").text = "Coins: " + str(get_parent().coins)
 	
+	

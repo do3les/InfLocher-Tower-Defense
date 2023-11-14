@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cumkwsnn0o4d1"]
+[gd_scene load_steps=9 format=3 uid="uid://cumkwsnn0o4d1"]
 
 [ext_resource type="Theme" uid="uid://detsu6arwhhvh" path="res://assets/mainTheme.tres" id="1_1bl72"]
 [ext_resource type="Script" path="res://interfaceScenes/gameHUD.gd" id="1_utb1h"]
 [ext_resource type="Texture2D" uid="uid://de2ilm70ukkx4" path="res://assets/textureHealth.tres" id="2_3x3x7"]
+[ext_resource type="Script" path="res://interfaceScenes/towerBuildButton.gd" id="5_h8wfr"]
 [ext_resource type="Texture2D" uid="uid://cfqiceskhvumo" path="res://assets/basicTowerHead.svg" id="5_yvtse"]
-[ext_resource type="Script" path="res://interfaceScenes/towerButtonSkripts/shooterButton.gd" id="6_pv2u8"]
+[ext_resource type="PackedScene" uid="uid://boefrkplkw5pq" path="res://towers/shooter/Shooter.tscn" id="6_6esoi"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_c2qyx"]
 keycode = 4194305
@@ -53,7 +54,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Shooter" type="Button" parent="Control" groups=["built_Tower_Groupe"]]
+[node name="ShooterButton" type="Button" parent="Control"]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 906.0
@@ -62,13 +63,16 @@ offset_bottom = 1024.0
 icon = ExtResource("5_yvtse")
 icon_alignment = 1
 expand_icon = true
-script = ExtResource("6_pv2u8")
+script = ExtResource("5_h8wfr")
+tower = ExtResource("6_6esoi")
 
-[node name="Bsp_ Button_sec_ Tower" type="Button" parent="Control" groups=["built_Tower_Groupe"]]
+[node name="Bsp_ Button_sec_ Tower" type="Button" parent="Control"]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-script = ExtResource("6_pv2u8")
+offset_left = 64.0
+offset_top = 704.0
+offset_right = 192.0
+offset_bottom = 832.0
+script = ExtResource("5_h8wfr")
 
 [node name="ExitLevelButton" type="Button" parent="."]
 offset_left = 32.0
