@@ -2,14 +2,21 @@ extends Node
 
 
 var towerStats = {
-	"BasicTower":{
-		"fireRate": 1,
-		"damge": 10,
+	"shooter":{
 		"range": 300,
-		"bulletType": "basicBullet",
+		"fireRate": 1,
+		"bulletType": "res://towers/shooter/bulletShooter.tscn",
+		"bulletName": "bullet1",
+		"istGegner": "keinGegner",
+		"bullet1":
+			{
+			"bulletDamage": 50.0,
+			"bulletSpeed": 2500.0,
+			"bulletTravelTime": 4.0,
+			"bulletPiercing": 0.0,
+			}
 		}
 }
-
 var collisonDetection = {
 	"BasicEnemyC": {
 		"istGegner": "gegner",

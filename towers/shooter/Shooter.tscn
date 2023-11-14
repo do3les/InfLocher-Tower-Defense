@@ -7,6 +7,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_jpl4i"]
 
 [node name="Shooter" type="Node2D"]
+top_level = true
 script = ExtResource("1_ke8gq")
 
 [node name="Range" type="Area2D" parent="."]

@@ -1,45 +1,51 @@
 extends Node2D
 
-var built = true
+var built = false
 
 func _ready():
 	print("error not overwritten 1")
-	loadButtons()
 	#Funtion to overwrite ----> to get var's
 
+func _input(event):
+	if event is InputEventMouseButton and not built:
+		built = true
+		self.position = event.position
 # # Variables are listed where they are first used
 
 # If possible, only use the function _process with entire methods.
 # ----> allows you to overwrite the function without losing the methods specified in there.
 
 
+var towerName
+var towerRange
+var fireRate
+var bulletType
+
+var bulletName
+var bulletDamage
+var bulletSpeed
+var bulletTravelTime
+var bulletPiercing
+
+func declareTowerStats(towerName):
+	# general Stats
+	towerRange = GameData.towerStats[towerName]["range"]
+	setTowerRange(towerRange)
+	fireRate = GameData.towerStats[towerName]["fireRate"]
+	bulletType = GameData.towerStats[towerName]["bulletType"]
+	bulletName = GameData.towerStats[towerName]["bulletName"]
+	declareBulletStats(bulletName)
+
+func declareBulletStats(bulletName):
+	# Stats of the Bullet declared as variable so damge can be upgraded etc
+	bulletDamage = GameData.towerStats[towerName][bulletName]["bulletDamage"]
+	bulletSpeed = GameData.towerStats[towerName][bulletName]["bulletSpeed"]
+	bulletTravelTime = GameData.towerStats[towerName][bulletName]["bulletTravelTime"]
+	bulletPiercing = GameData.towerStats[towerName][bulletName]["bulletPiercing"]
 
 
-# # # Constructing related block
-var price
-
-func loadButtons():
-	for i in get_tree().get_nodes_in_group("built_Tower_Groupe"):
-		i.pressed.connect(buildTower.bind(i.get_Type()))
-		price = i.getPrice()
-
-func buildTower(towerToBuild):
-	if (get_node("/root/Level1").coins >= price):
-		var towerInstance = load(towerToBuild).instantiate()
-		add_child(towerInstance)
-		get_node("/root/Level1").coins -= price
-
-func _input(event):
-	if event is InputEventMouseButton and not built:
-		built = true
-		self.position = event.position
-
-
-func setTowerRange(number):
-	self.get_node("Range/CollisionShape2D").get_shape().radius = number
-
-
-
+func setTowerRange(towerRange):
+	self.get_node("Range/CollisionShape2D").get_shape().radius = towerRange
 
 
 # # # Fighting related block
@@ -60,9 +66,7 @@ func _on_range_body_exited(body):
 		enemyArray.erase(body.get_parent())
 
 
-
-
-#targeting the enemy
+# #targeting the enemy
 var enemy
 
 func shoot():
@@ -92,11 +96,9 @@ func turn():
 	get_node("TowerHead").look_at(enemy.position + enemy.get_parent().position)
 
 
-var bulletType
 #bulletType = path to the bullet that the tower shoots
 var isReady = true
 var bullet
-var fireRate
 
 
 func spawnBullet(bulletType):

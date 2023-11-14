@@ -5,9 +5,7 @@ extends "res://towers/Tower.gd"
 func _ready():
 	print("overwritten")
 	built = false
-	setTowerRange(300)
-	fireRate = 1
-	bulletType = "res://towers/bullets/basicBullet.tscn"
+	declareTowerStats("shooter")
 	print("done")
 
 func _process(delta):
