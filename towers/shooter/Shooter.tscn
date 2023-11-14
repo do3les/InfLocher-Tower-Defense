@@ -11,6 +11,7 @@ top_level = true
 script = ExtResource("1_ke8gq")
 
 [node name="Range" type="Area2D" parent="."]
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
 shape = SubResource("CircleShape2D_jpl4i")

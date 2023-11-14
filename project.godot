@@ -30,6 +30,12 @@ window/size/initial_position_type=0
 
 project/assembly_name="InfLocher Tower Defense"
 
+[layer_names]
+
+2d_physics/layer_1="Tower"
+2d_physics/layer_2="Bullet"
+2d_physics/layer_3="Enemy"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

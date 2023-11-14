@@ -3,12 +3,10 @@ extends CharacterBody2D
 var richtung = Vector2(1,1)
 
 func _physics_process(delta):
+	if (bulletPiercing < 0):
+		queue_free()
 	velocity = richtung * bulletSpeed
 	var hit = move_and_collide(velocity * delta)
-	if hit:
-		if hit.get_collider().get_parent().has_method("on_hit"):
-			hit.get_collider().get_parent().on_hit()
-			queue_free()
 
 
 var bulletDamage
@@ -21,3 +19,8 @@ func passOnBulletStats(dmg, speed, trti, pierc):
 	bulletSpeed = speed
 	bulletTravelTime = trti
 	bulletPiercing = pierc
+
+func _on_area_2d_body_entered(body):
+	bulletPiercing -= 1
+	print(body)
+	print("hit")

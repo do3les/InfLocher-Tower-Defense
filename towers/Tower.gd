@@ -82,12 +82,10 @@ var enemyArray = []
 #In progress needs  
 
 func _on_range_body_entered(body):
-	if GameData.collisonDetection[body.get_child(0).get_name()]["istGegner"] == "gegner":
-		enemyArray.append(body.get_parent())
+	enemyArray.append(body.get_parent())
 
 func _on_range_body_exited(body):
-	if (GameData.collisonDetection[body.get_child(0).get_name()]["istGegner"] == "gegner"):
-		enemyArray.erase(body.get_parent())
+	enemyArray.erase(body.get_parent())
 
 
 

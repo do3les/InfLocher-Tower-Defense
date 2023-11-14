@@ -11,6 +11,8 @@ loop = false
 script = ExtResource("1_gqt03")
 
 [node name="BasicEnemyC" type="CharacterBody2D" parent="."]
+collision_layer = 4
+collision_mask = 0
 
 [node name="BasicEnemyC" type="CollisionShape2D" parent="BasicEnemyC"]
 shape = SubResource("CircleShape2D_vst0h")
