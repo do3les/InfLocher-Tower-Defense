@@ -5,10 +5,10 @@ var towerStats = {
 	"shooter":{
 		"range": 300,
 		"fireRate": 1,
-		"bulletType": "res://towers/shooter/bulletShooter.tscn",
-		"bulletName": "bullet1",
+		"bulletType": "res://towers/shooter/shooterBullet.tscn",
+		"bulletName": "bullet",
 		"istGegner": "keinGegner",
-		"bullet1":
+		"bullet":
 			{
 			"bulletDamage": 50.0,
 			"bulletSpeed": 2500.0,

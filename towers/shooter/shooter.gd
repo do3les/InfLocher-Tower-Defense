@@ -5,10 +5,12 @@ extends "res://towers/Tower.gd"
 func _ready():
 	print("overwritten")
 	built = false
-	declareTowerStats("shooter")
+	towerName = "shooter"
+	declareTowerStats()
 	print("done")
 
-func _process(delta):
+
+func _process(_delta):
 	if not built:
 		self.position = get_viewport().get_mouse_position()
 	else:

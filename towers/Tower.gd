@@ -1,5 +1,6 @@
 extends Node2D
 
+
 var built = false
 
 func _ready():
@@ -16,6 +17,10 @@ func _input(event):
 # ----> allows you to overwrite the function without losing the methods specified in there.
 
 
+
+
+
+
 var towerName
 var towerRange
 var fireRate
@@ -27,29 +32,50 @@ var bulletSpeed
 var bulletTravelTime
 var bulletPiercing
 
-func declareTowerStats(towerName):
+func declareTowerStats():
 	# general Stats
 	towerRange = GameData.towerStats[towerName]["range"]
 	setTowerRange(towerRange)
 	fireRate = GameData.towerStats[towerName]["fireRate"]
 	bulletType = GameData.towerStats[towerName]["bulletType"]
 	bulletName = GameData.towerStats[towerName]["bulletName"]
-	declareBulletStats(bulletName)
+	declareBulletStats()
+	
 
-func declareBulletStats(bulletName):
+func setTowerRange(tRange):
+	self.get_node("Range/CollisionShape2D").get_shape().radius = tRange
+
+func declareBulletStats():
 	# Stats of the Bullet declared as variable so damge can be upgraded etc
 	bulletDamage = GameData.towerStats[towerName][bulletName]["bulletDamage"]
 	bulletSpeed = GameData.towerStats[towerName][bulletName]["bulletSpeed"]
 	bulletTravelTime = GameData.towerStats[towerName][bulletName]["bulletTravelTime"]
 	bulletPiercing = GameData.towerStats[towerName][bulletName]["bulletPiercing"]
 
+func spawnBullet(bType):
+	isReady = false
+	
+	var bulletSpawnPoint = get_node("TowerBase").global_position
+	var towerHead = get_node("TowerHead/GunBarrel").global_position
+	var richtung = (towerHead - bulletSpawnPoint)
+	var winkel = richtung.normalized()
+	#pass the attributes to bullet
+	bullet = load(bType).instantiate()
+	bullet.richtung = winkel
+	bullet.passOnBulletStats(bulletDamage, bulletSpeed, bulletTravelTime, bulletPiercing)
+	
+	get_node("Bullets").add_child(bullet)
+	
+	#waiting till ready to shoot agein
+	await  get_tree().create_timer(fireRate).timeout
+	isReady = true
 
-func setTowerRange(towerRange):
-	self.get_node("Range/CollisionShape2D").get_shape().radius = towerRange
+
+
+
 
 
 # # # Fighting related block
-
 
 #recognition of the enemy
 
@@ -60,10 +86,12 @@ func _on_range_body_entered(body):
 	if GameData.collisonDetection[body.get_child(0).get_name()]["istGegner"] == "gegner":
 		enemyArray.append(body.get_parent())
 
-
 func _on_range_body_exited(body):
 	if (GameData.collisonDetection[body.get_child(0).get_name()]["istGegner"] == "gegner"):
 		enemyArray.erase(body.get_parent())
+
+
+
 
 
 # #targeting the enemy
@@ -80,7 +108,6 @@ func select_enemy():
 	enemyArray.sort_custom(custom_enemy_sort_by_progress)
 	enemy = enemyArray[-1]
 
-
 func custom_enemy_sort_by_progress(a, b):
 	if typeof(a) == typeof(b):
 		return a.progress < b.progress;
@@ -90,29 +117,9 @@ func custom_enemy_sort_by_progress(a, b):
 		else:
 			return true;
 
-
-
 func turn():
 	get_node("TowerHead").look_at(enemy.position + enemy.get_parent().position)
-
 
 #bulletType = path to the bullet that the tower shoots
 var isReady = true
 var bullet
-
-
-func spawnBullet(bulletType):
-	isReady = false
-	
-	var bulletSpawnPoint = get_node("TowerBase").global_position
-	var towerHead = get_node("TowerHead/GunBarrel").global_position
-	var richtung = (towerHead - bulletSpawnPoint)
-	var winkel = richtung.normalized()
-	#pass the attributes to bullet
-	bullet = load(bulletType).instantiate()
-	get_node("Bullets").add_child(bullet)
-	bullet.richtung = winkel
-	
-	#waiting till ready to shoot agein
-	await  get_tree().create_timer(fireRate).timeout
-	isReady = true
