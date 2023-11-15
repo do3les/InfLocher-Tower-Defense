@@ -11,11 +11,7 @@ var towerStats = {
 		"bullet":
 			{
 			"bulletDamage": 50.0,
-<<<<<<< HEAD
 			"bulletSpeed": 1800.0,
-=======
-			"bulletSpeed": 2000.0,
->>>>>>> 621b9b981ae434e1715c9546f6f37ed71779830a
 			"bulletTravelTime": 4.0,
 			"bulletPiercing": 0.0,
 			}
