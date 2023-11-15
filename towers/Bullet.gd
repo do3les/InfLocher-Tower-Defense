@@ -22,4 +22,8 @@ func pass_on_bullet_stats(dmg, speed, trti, pierc):
 
 func _on_area_2d_body_entered(body):
 	bulletPiercing -= 1
+<<<<<<< HEAD
 	body.get_parent().enemy_hit(bulletDamage)
+=======
+	body.get_parent().on_hit(bulletDamage)
+>>>>>>> 621b9b981ae434e1715c9546f6f37ed71779830a
