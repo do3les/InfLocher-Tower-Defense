@@ -31,27 +31,27 @@ var bulletSpeed
 var bulletTravelTime
 var bulletPiercing
 
-func declareTowerStats():
+func declare_tower_stats():
 	# general Stats
 	towerRange = GameData.towerStats[towerName]["range"]
-	setTowerRange(towerRange)
+	set_tower_range(towerRange)
 	fireRate = GameData.towerStats[towerName]["fireRate"]
 	bulletType = GameData.towerStats[towerName]["bulletType"]
 	bulletName = GameData.towerStats[towerName]["bulletName"]
-	declareBulletStats()
+	declare_bulletStats()
 	
 
-func setTowerRange(tRange):
+func set_tower_range(tRange):
 	self.get_node("Range/CollisionShape2D").get_shape().radius = tRange
 
-func declareBulletStats():
+func declare_bulletStats():
 	# Stats of the Bullet declared as variable so damge can be upgraded etc
 	bulletDamage = GameData.towerStats[towerName][bulletName]["bulletDamage"]
 	bulletSpeed = GameData.towerStats[towerName][bulletName]["bulletSpeed"]
 	bulletTravelTime = GameData.towerStats[towerName][bulletName]["bulletTravelTime"]
 	bulletPiercing = GameData.towerStats[towerName][bulletName]["bulletPiercing"]
 
-func spawnBullet(bType):
+func spawn_bullet(bType):
 	isReady = false
 	
 	var bulletSpawnPoint = get_node("TowerBase").global_position
@@ -61,7 +61,7 @@ func spawnBullet(bType):
 	#pass the attributes to bullet
 	bullet = load(bType).instantiate()
 	bullet.richtung = winkel
-	bullet.passOnBulletStats(bulletDamage, bulletSpeed, bulletTravelTime, bulletPiercing)
+	bullet.pass_on_bullet_stats(bulletDamage, bulletSpeed, bulletTravelTime, bulletPiercing)
 	
 	get_node("Bullets").add_child(bullet)
 	
@@ -99,7 +99,7 @@ func shoot():
 		select_enemy()
 		turn()
 		if isReady:
-			spawnBullet(bulletType)
+			spawn_bullet(bulletType)
 
 func select_enemy():
 	enemyArray.sort_custom(custom_enemy_sort_by_progress)

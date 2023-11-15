@@ -11,31 +11,13 @@ var towerStats = {
 		"bullet":
 			{
 			"bulletDamage": 50.0,
-			"bulletSpeed": 2500.0,
+			"bulletSpeed": 1800.0,
 			"bulletTravelTime": 4.0,
 			"bulletPiercing": 0.0,
 			}
 		}
 }
-var collisonDetection = {
-	"BasicEnemyC": {
-		"istGegner": "gegner",
-	},
-	"basicBullet": {
-		"istGegner": "keinGegner",
-	}
-}
 
-var bulletStats = {
-	"BasicBullet": {
-		"istGegner": "keinGegner",
-		"bulletDamage": 50.0,
-		"bulletSpeed": 2500.0,
-		"bulletTravelTime": 4.0,
-		"bulletPiercing": 0.0,
-		# weitere auflistung eigenschaften wie damage type möglich (vlt. nicht auf der basic bullet)
-	}
-}
 
 var levels = {
 	"Level1":{

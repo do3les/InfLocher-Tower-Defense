@@ -2,7 +2,7 @@ extends Node2D
 
 
 var building
-var enemy
+var enemy 
 var towerScene
 var numberOfEnemies = 0
 var enemyFrequency = 0
@@ -12,7 +12,7 @@ var health = 100
 
 
 func _ready():
-	enemy = load("res://enemy/" + GameData.levels[self.get_name()]["enemy"] + ".tscn")
+	enemy = load("res://enemy/circelEnemys/circleNormal/circleNormal.tscn")
 	# ToDo: Rewrite to allow for multiple enemy classes
 	
 	numberOfEnemies = GameData.levels[self.get_name()]["numberOfEnemies"]	
@@ -35,7 +35,7 @@ func _ready():
 func _process(_delta):
 	pass
 
-
+# von hand eingesetzte instace nur zum testen
 func start_wave():
 	for i in range(numberOfEnemies):
 		var enemyInstance = enemy.instantiate()

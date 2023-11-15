@@ -6,7 +6,7 @@ func _ready():
 	print("overwritten")
 	built = false
 	towerName = "shooter"
-	declareTowerStats()
+	declare_tower_stats()
 	print("done")
 
 

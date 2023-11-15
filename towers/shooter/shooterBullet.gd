@@ -1,4 +1,4 @@
 extends "res://towers/Bullet.gd"
 
 func _ready():
-	passOnBulletStats(bulletDamage, bulletSpeed, bulletTravelTime, bulletPiercing)
+	pass_on_bullet_stats(bulletDamage, bulletSpeed, bulletTravelTime, bulletPiercing)

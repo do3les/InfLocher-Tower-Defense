@@ -14,7 +14,7 @@ var bulletSpeed
 var bulletTravelTime
 var bulletPiercing
 
-func passOnBulletStats(dmg, speed, trti, pierc):
+func pass_on_bullet_stats(dmg, speed, trti, pierc):
 	bulletDamage = dmg
 	bulletSpeed = speed
 	bulletTravelTime = trti
@@ -22,5 +22,4 @@ func passOnBulletStats(dmg, speed, trti, pierc):
 
 func _on_area_2d_body_entered(body):
 	bulletPiercing -= 1
-	print(body)
-	print("hit")
+	body.get_parent().enemy_hit(bulletDamage)
