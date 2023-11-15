@@ -42,7 +42,7 @@ theme = ExtResource("1_1bl72")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="KillsLabel" type="Label" parent="."]
+[node name="ScoreLable" type="Label" parent="."]
 offset_left = 1664.0
 offset_top = 192.0
 offset_right = 1856.0

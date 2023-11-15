@@ -6,7 +6,7 @@ var enemy
 var towerScene
 var numberOfEnemies = 0
 var enemyFrequency = 0
-var kills = 0
+var score = 0
 var coins = 0
 var health = 100
 

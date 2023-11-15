@@ -22,7 +22,7 @@ func _input(event):
 
 var towerName
 var towerRange
-var fireRate
+var towerFireRate
 var bulletType
 
 var bulletName
@@ -35,7 +35,7 @@ func declare_tower_stats():
 	# general Stats
 	towerRange = GameData.towerStats[towerName]["range"]
 	set_tower_range(towerRange)
-	fireRate = GameData.towerStats[towerName]["fireRate"]
+	towerFireRate = GameData.towerStats[towerName]["towerFireRate"]
 	bulletType = GameData.towerStats[towerName]["bulletType"]
 	bulletName = GameData.towerStats[towerName]["bulletName"]
 	declare_bulletStats()
@@ -66,7 +66,7 @@ func spawn_bullet(bType):
 	get_node("Bullets").add_child(bullet)
 	
 	#waiting till ready to shoot agein
-	await  get_tree().create_timer(fireRate).timeout
+	await  get_tree().create_timer(towerFireRate).timeout
 	isReady = true
 
 
