@@ -29,11 +29,7 @@ func _physics_process(delta):
 		queue_free()
 
 
-<<<<<<< HEAD:enemy/Enemy.gd
+
 func enemy_hit(dmg):
 	enemyHealth -= dmg
-=======
-func on_hit(dmg):
-	health -= dmg
->>>>>>> 621b9b981ae434e1715c9546f6f37ed71779830a:enemy/basicEnemy.gd
 	# ToDo: Allow for variable number of coins
