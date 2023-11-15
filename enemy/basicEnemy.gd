@@ -15,6 +15,8 @@ func _ready():
 func _physics_process(delta):
 	if (health < 1):
 		queue_free()
+		get_parent().get_parent().kills += 1
+		get_parent().get_parent().coins += 10
 	progress += 100 * delta
 	if progress_ratio == 1:
 		reached_target.emit()
@@ -23,7 +25,5 @@ func _physics_process(delta):
 
 func on_hit(dmg):
 	health -= dmg
-	get_parent().get_parent().kills += 1
-	get_parent().get_parent().coins += 10
 	# ToDo: Allow for variable number of coins
 
