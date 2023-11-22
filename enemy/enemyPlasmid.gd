@@ -1,0 +1,76 @@
+@icon("res://assets/cycle.svg")
+class_name enemyPlasmid extends Node
+
+@export var fragment = {}
+@export var weight = 0.0
+@export var mutationStrength = 0.25
+@export var mutationSeed = -1
+@export var modifierActionChangeChance = 0.05
+
+func _ready():
+	self.mutate(mutationStrength, mutationSeed)
+	
+
+
+func mutate(factor, seed=-1):
+	if seed == -1:
+		randomize()
+	else:
+		seed(seed)
+
+	for key in fragment:
+		var gene = fragment[key]
+		
+		match GameData.DNAformats[key]:
+			"val": # should be of the form val = val
+				gene = gene + randf()*factor 
+			"mod": # should be of the form mod = ["type", val]
+				gene[1] = gene[1] + randf()*factor
+				if randf() < modifierActionChangeChance:
+					if gene[0] == "+":
+						gene[0] = "*"
+					elif gene[0] == "*":
+						gene[0] = "+"
+					else:
+						print("Modifier action in gene not recognized!")
+			"dict_mult":
+				pass
+			"dict_vals":
+				pass
+			
+			"color":
+				pass
+			"shape":
+				pass
+			
+			_:
+				print("Gene type not recognized!")
+				
+
+
+func apply_gene(DNA, key):
+	var gene = fragment[key]
+	match GameData.DNAformats[key]:
+		"val":
+			pass
+		"mod":
+			if gene[0] == "+":
+				DNA[key] += gene[1]
+			elif gene[0] == "*":
+				DNA[key] *= gene[1]
+				
+				get_parent().multiply_modifier_used(key)
+			else:
+				print("Modifier action in gene not recognized!")
+		
+		"dict_mult":
+			pass
+		"dict_vals":
+			pass
+		"color":
+			pass
+		"shape":
+			pass
+	
+		_:
+			print("Gene type not recognized!")

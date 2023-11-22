@@ -12,7 +12,7 @@ var health = 100
 
 
 func _ready():
-	enemy = load("res://enemy/circelEnemys/circleNormal/circleNormal.tscn")
+	# enemy = load("res://enemy/circelEnemys/circleNormal/circleNormal.tscn")
 	# ToDo: Rewrite to allow for multiple enemy classes
 	
 	numberOfEnemies = GameData.levels[self.get_name()]["numberOfEnemies"]	
@@ -41,13 +41,8 @@ func start_wave():
 		var enemyInstance = enemy.instantiate()
 		get_node("Path").add_child(enemyInstance)
 		enemyInstance.reached_target.connect(enemy_reached_target)
-		await get_tree().create_timer(1 / enemyFrequency).timeout
+		await get_tree().create_timer(1.0 / enemyFrequency).timeout
 
-
-
-func enemy_reached_target():
-	health -= 5
-	# ToDo: Is this all we do here? This could be moved into the enemy.
 
 
 func exit_level():
