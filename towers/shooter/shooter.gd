@@ -3,11 +3,11 @@ extends "res://towers/Tower.gd"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("overwritten")
+	#print("overwritten")
 	built = false
 	towerName = "shooter"
 	declare_tower_stats()
-	print("done")
+	#print("done")
 
 
 func _process(_delta):

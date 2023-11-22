@@ -8,6 +8,7 @@ func _ready():
 	pass
 
 func really_ready():
+	get_node("DNA").apply_plasmids()
 	set_shape(DNA["shape"])
 	offset_on_path()
 	
@@ -24,7 +25,7 @@ func set_shape(path_to_shape):
 func offset_on_path():
 	var path_width = get_parent().get_node("PathLine").width * 0.8
 	var r = get_node("CharacterBody2D/CollisionPolygon2D").polygon[randi() %\
-	 get_node("CharacterBody2D/CollisionPolygon2D").polygon.size()].length() # I don't think this will work.
+	get_node("CharacterBody2D/CollisionPolygon2D").polygon.size()].length() # I don't think this will work.
 	get_child(0).position.y = randf_range((path_width / -2 + r), (path_width / 2 - r))
 
 
@@ -48,7 +49,8 @@ func move_on_path(delta):
 		reached_target()
 
 func reached_target():
-	queue_free()
+	level.get_node("EnemyGenePool").add_child(get_node("DNA").get_child(0).duplicate()) # ToDo: Fix!!
 	level.health -= DNA["damage"]
+	queue_free()
 
 

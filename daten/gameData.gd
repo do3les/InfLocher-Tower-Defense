@@ -62,7 +62,7 @@ const DNAformats = {
 var levels = {
 	"Level1":{
 		"enemy":"basicEnemy",
-		"numberOfEnemies":1,
+		"numberOfEnemies":5,
 		"enemyFrequency":10,
 		"start_coins":100
 	}

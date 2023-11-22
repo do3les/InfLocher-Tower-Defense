@@ -24,7 +24,7 @@ func mutate(factor, seed=-1):
 		match GameData.DNAformats[key]:
 			"mod": # should be of the form mod = ["type", val]
 				gene[1] = gene[1] + randf()*factor
-				if randf() < modifierActionChangeChance:
+				if randf() < modifierActionChangeChance: # this was a bad idea :(
 					if gene[0] == "+":
 						gene[0] = "*"
 					elif gene[0] == "*":
@@ -67,7 +67,7 @@ func apply_gene(DNA, key):
 		"dict_vals":
 			pass
 		"color":
-			pass
+			DNA[key] = gene
 		"shape":
 			pass
 	

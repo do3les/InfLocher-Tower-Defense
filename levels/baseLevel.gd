@@ -42,10 +42,11 @@ func start_wave():
 	for i in range(numberOfEnemies):
 		var enemyInstance = enemy.instantiate()
 		
-		enemyInstance.add_child(plasmids[randi() % plasmids.size()])
-		
 		get_node("Path").add_child(enemyInstance)
+		
+		enemyInstance.get_node("DNA").add_child(plasmids[randi() % plasmids.size()].duplicate())
 		enemyInstance.really_ready()
+		
 		await get_tree().create_timer(1.0 / enemyFrequency).timeout
 
 
