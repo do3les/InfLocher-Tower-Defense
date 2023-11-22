@@ -22,8 +22,6 @@ func mutate(factor, seed=-1):
 		var gene = fragment[key]
 		
 		match GameData.DNAformats[key]:
-			"val": # should be of the form val = val
-				gene = gene + randf()*factor 
 			"mod": # should be of the form mod = ["type", val]
 				gene[1] = gene[1] + randf()*factor
 				if randf() < modifierActionChangeChance:
@@ -32,6 +30,7 @@ func mutate(factor, seed=-1):
 					elif gene[0] == "*":
 						gene[0] = "+"
 					else:
+						# other modifiers could be "=", ...
 						print("Modifier action in gene not recognized!")
 			"dict_mult":
 				pass

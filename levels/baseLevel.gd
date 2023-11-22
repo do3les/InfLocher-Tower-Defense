@@ -12,7 +12,7 @@ var health = 100
 
 
 func _ready():
-	# enemy = load("res://enemy/circelEnemys/circleNormal/circleNormal.tscn")
+	enemy = load("res://enemy/baseEnemy.tscn")
 	# ToDo: Rewrite to allow for multiple enemy classes
 	
 	numberOfEnemies = GameData.levels[self.get_name()]["numberOfEnemies"]	
@@ -37,10 +37,15 @@ func _process(_delta):
 
 # von hand eingesetzte instace nur zum testen
 func start_wave():
+	var plasmids = get_node("EnemyGenePool").get_children()
+	
 	for i in range(numberOfEnemies):
 		var enemyInstance = enemy.instantiate()
+		
+		enemyInstance.add_child(plasmids[randi() % plasmids.size()])
+		
 		get_node("Path").add_child(enemyInstance)
-		enemyInstance.reached_target.connect(enemy_reached_target)
+		enemyInstance.really_ready()
 		await get_tree().create_timer(1.0 / enemyFrequency).timeout
 
 

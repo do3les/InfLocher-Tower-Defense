@@ -1,8 +1,8 @@
 @icon("res://assets/dna1.svg")
 class_name enemyDNA extends Node
 
-
-var initial = GameData.enemyInitialDNA[get_parent().type]
+@export var enemyType = "base"
+var initial = GameData.enemyInitialDNA[enemyType]
 @onready var DNA = initial.duplicate()
 
 
