@@ -26,17 +26,18 @@ var enemyInitialDNA = {
 		"coins": 1,
 		"color": Color("PINK"),
 		"shape": "res://assets/shapes/square.tres",
-		
+		#
 		"damage": 1,
-		
+		#
 		"health": 100.0,
 		"dmgMods": {},
 		"armor": {},
-		
+		#
 		"speed": 50.0,
 		"poise": 100,
 		"poiseRecovery": 10,
 		"poiseMods": {},
+		"stunPoise": -30,
 	}
 }
 # InitialDNA and DNAformats MUST HAVE THE SAME KEYS!!!, or something is bound to crash!!!
@@ -45,17 +46,18 @@ const DNAformats = {
 	"coins": "mod",
 	"color": "color",
 	"shape": "shape",
-	
+	#
 	"damage": "mod",
-	
+	#
 	"health": "mod",
 	"dmgMods": "dict_mult",
 	"armor": "dict_vals",
-	
+	#
 	"speed": "mod",
 	"poise": "mod",
 	"poiseRecovery": "mod",
 	"poiseMods": "dict_mult",
+	"stunPoise": "mod",
 }
 
 

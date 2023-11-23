@@ -2,6 +2,7 @@ class_name baseEnemy extends PathFollow2D
 
 @export var enemyType = "base"
 @onready var DNA = get_node("DNA").DNA
+@onready var originalDNA = get_node("DNA").origin
 @onready var level = get_parent().get_parent()
 
 func _ready():
@@ -30,7 +31,14 @@ func offset_on_path():
 
 
 func _physics_process(delta):
-	move_on_path(delta)
+	if DNA["poise"] > 0:
+		move_on_path(delta)
+
+	if DNA["poise"] < originalDNA["poise"]:
+		DNA["poise"] += DNA["poiseRecovery"] * delta
+	if DNA["poise"] > originalDNA["poise"]:
+		DNA["poise"] = originalDNA["poise"]
+	
 	if DNA["health"] <= 0:
 		die()
 
@@ -39,8 +47,11 @@ func die():
 	level.score += DNA["score"]
 	level.coins += DNA["coins"]
 
-func on_hit(dmg):
+func on_hit(dmg, poise_dmg=-1):
 	DNA["health"] -= dmg
+	DNA["poise"] -= poise_dmg if poise_dmg != -1 else dmg
+	if(DNA["poise"] <= 0):
+		DNA["poise"] = DNA["stunPoise"]
 	
 
 func move_on_path(delta):
