@@ -24,7 +24,7 @@ var enemyInitialDNA = {
 	"base":{
 		"score": 5,
 		"coins": 1,
-		"color": Color("PINK"),
+		"color": Color("MAGENTA"),
 		"shape": "res://assets/shapes/square.tres",
 		#
 		"damage": 1,

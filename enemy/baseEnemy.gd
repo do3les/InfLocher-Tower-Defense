@@ -15,7 +15,6 @@ func really_ready():
 	
 
 
-
 func set_shape(path_to_shape):
 	var points = load(path_to_shape).points
 	get_node("CharacterBody2D/CollisionPolygon2D").polygon = points
@@ -44,8 +43,8 @@ func _physics_process(delta):
 
 func die():
 	queue_free()
-	level.score += DNA["score"]
-	level.coins += DNA["coins"]
+	level.score += int(DNA["score"])
+	level.coins += int(DNA["coins"])
 
 func on_hit(dmg, poise_dmg=-1):
 	DNA["health"] -= dmg
@@ -64,4 +63,8 @@ func reached_target():
 	level.health -= DNA["damage"]
 	queue_free()
 
-
+func _input(event):
+	if event is InputEventMouseButton and event.is_pressed():
+		var dist = event.position.distance_to(get_child(0).global_position)
+		if dist < 25:
+			get_child(0).add_child(preload("res://enemy/enemyInfo.gd").new())

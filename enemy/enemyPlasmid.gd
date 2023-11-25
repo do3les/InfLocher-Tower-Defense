@@ -3,7 +3,7 @@ class_name enemyPlasmid extends Node
 
 @export var fragment = {}
 @export var weight = 0.0
-@export var mutationStrength = 2
+@export var mutationStrength = 0.5
 @export var modifierActionChangeChance = 0.05
 
 func _ready():
@@ -58,7 +58,6 @@ func apply_gene(DNA, key):
 				DNA[key] += gene[1]
 			elif gene[0] == "*":
 				DNA[key] = DNA[key] * gene[1]
-				get_parent().multiply_modifier_used(key)
 			else:
 				print("Modifier action in gene not recognized!")
 		

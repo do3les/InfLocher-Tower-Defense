@@ -9,6 +9,7 @@ var enemyFrequency = 0
 var score = 0
 var coins = 0
 var health = 100
+var plasmidsPerEnemy = 2
 
 
 func _ready():
@@ -37,17 +38,31 @@ func _process(_delta):
 
 # von hand eingesetzte instace nur zum testen
 func start_wave():
-	var plasmids = get_node("EnemyGenePool").get_children()
+
 	
 	for i in range(numberOfEnemies):
 		var enemyInstance = enemy.instantiate()
 		
 		get_node("Path").add_child(enemyInstance)
 		
-		enemyInstance.get_node("DNA").add_child(plasmids[randi() % plasmids.size()].duplicate())
+		for plasmid in pick_plasmids(plasmidsPerEnemy):
+			enemyInstance.get_node("DNA").add_child(plasmid)
+		
 		enemyInstance.really_ready()
 		
 		await get_tree().create_timer(1.0 / enemyFrequency).timeout
+
+func pick_plasmids(n):
+	var plasmids = get_node("EnemyGenePool").get_children()
+	var out = []
+	while out.size() < n:
+		var pick = plasmids[randi() % plasmids.size()].duplicate()
+		if out.has(pick):
+			continue
+		else:
+			out.append(pick)
+	return out
+
 
 
 
