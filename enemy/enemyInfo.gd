@@ -10,5 +10,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	text = JSON.stringify(DNA, "\t")
+	rotation = -1 * get_parent().get_parent().rotation
 	if Input.is_key_pressed(KEY_BACKSPACE):
 		queue_free()
