@@ -1,10 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bj33742gqt0y"]
+[gd_scene load_steps=6 format=3 uid="uid://bj33742gqt0y"]
 
 [ext_resource type="Script" path="res://levels/level1.gd" id="1_0ff16"]
 [ext_resource type="PackedScene" uid="uid://bictxwblu0emk" path="res://path/path.tscn" id="2_5ilm6"]
 [ext_resource type="PackedScene" uid="uid://cumkwsnn0o4d1" path="res://interfaceScenes/gameHUD.tscn" id="3_gcw7q"]
+[ext_resource type="Script" path="res://enemy/enemyPlasmid.gd" id="4_2b5hb"]
 
-[sub_resource type="Curve2D" id="Curve2D_xuq13"]
+[sub_resource type="Curve2D" id="Curve2D_ro4g5"]
 resource_local_to_scene = true
 bake_interval = 64.0
 _data = {
@@ -17,8 +18,43 @@ script = ExtResource("1_0ff16")
 
 [node name="Path" parent="." instance=ExtResource("2_5ilm6")]
 position = Vector2(496, 352)
-curve = SubResource("Curve2D_xuq13")
+curve = SubResource("Curve2D_ro4g5")
 
 [node name="HUD" parent="." instance=ExtResource("3_gcw7q")]
 
-[node name="Towers" type="Node2D" parent="."]
+[node name="Towers" type="Node" parent="."]
+
+[node name="EnemyGenePool" type="Node" parent="."]
+
+[node name="Plasmid1" type="Node" parent="EnemyGenePool"]
+script = ExtResource("4_2b5hb")
+fragment = {
+"color": Color(0, 1, 0, 1),
+"health": ["*", 8.0],
+"poise": ["+", -50.0]
+}
+
+[node name="Plasmid2" type="Node" parent="EnemyGenePool"]
+script = ExtResource("4_2b5hb")
+fragment = {
+"color": Color(0.905882, 0, 0.976471, 1),
+"health": ["*", 0.1],
+"speed": ["+", 50.0]
+}
+
+[node name="Plasmid3" type="Node" parent="EnemyGenePool"]
+script = ExtResource("4_2b5hb")
+fragment = {
+"color": Color(0, 0, 1, 1),
+"health": ["*", 0.5],
+"stunPoise": ["+", 20.0]
+}
+
+[node name="Plasmid4" type="Node" parent="EnemyGenePool"]
+script = ExtResource("4_2b5hb")
+fragment = {
+"coins": ["+", 5.0],
+"color": Color(0.415686, 0.2, 0.0784314, 1),
+"damage": ["+", 10.0],
+"score": ["*", 3.0]
+}

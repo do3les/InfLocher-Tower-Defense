@@ -9,10 +9,11 @@ var enemyFrequency = 0
 var score = 0
 var coins = 0
 var health = 100
+var plasmidsPerEnemy = 2
 
 
 func _ready():
-	enemy = load("res://enemy/circelEnemys/circleNormal/circleNormal.tscn")
+	enemy = load("res://enemy/baseEnemy.tscn")
 	# ToDo: Rewrite to allow for multiple enemy classes
 	
 	numberOfEnemies = GameData.levels[self.get_name()]["numberOfEnemies"]	
@@ -37,17 +38,32 @@ func _process(_delta):
 
 # von hand eingesetzte instace nur zum testen
 func start_wave():
+
+	
 	for i in range(numberOfEnemies):
 		var enemyInstance = enemy.instantiate()
+		
 		get_node("Path").add_child(enemyInstance)
-		enemyInstance.reached_target.connect(enemy_reached_target)
-		await get_tree().create_timer(1 / enemyFrequency).timeout
+		
+		for plasmid in pick_plasmids(plasmidsPerEnemy):
+			enemyInstance.get_node("DNA").add_child(plasmid)
+		
+		enemyInstance.really_ready()
+		
+		await get_tree().create_timer(1.0 / enemyFrequency).timeout
+
+func pick_plasmids(n):
+	var plasmids = get_node("EnemyGenePool").get_children()
+	var out = []
+	while out.size() < n:
+		var pick = plasmids[randi() % plasmids.size()].duplicate()
+		if out.has(pick):
+			continue
+		else:
+			out.append(pick)
+	return out
 
 
-
-func enemy_reached_target():
-	health -= 5
-	# ToDo: Is this all we do here? This could be moved into the enemy.
 
 
 func exit_level():

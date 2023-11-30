@@ -73,6 +73,7 @@ offset_top = 704.0
 offset_right = 192.0
 offset_bottom = 832.0
 script = ExtResource("5_h8wfr")
+tower = ExtResource("6_6esoi")
 
 [node name="ExitLevelButton" type="Button" parent="."]
 offset_left = 32.0
