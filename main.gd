@@ -22,7 +22,7 @@ func _on_exit_game_button_pressed():
 
 
 func _on_option_button_item_selected(index):
-	savePath = "res://Profiles/profile"  + str(index) + ".dat"
+	savePath = "user://profile" + str(index) + ".dat"
 	print(savePath)
 
 
