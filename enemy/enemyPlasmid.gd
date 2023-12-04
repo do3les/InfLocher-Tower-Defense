@@ -1,6 +1,7 @@
 @icon("res://assets/cycle.svg")
 class_name enemyPlasmid extends Node
 
+
 @export var fragment = {}
 @export var weight = 0.0
 @export var mutationStrength = 0.5

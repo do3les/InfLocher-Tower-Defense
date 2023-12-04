@@ -9,7 +9,7 @@ var enemyFrequency = 0
 var score = 0
 var coins = 0
 var health = 100
-var plasmidsPerEnemy = 2
+@export var plasmidsPerEnemy = 2  # ToDo: make random
 
 
 func _ready():
@@ -25,6 +25,7 @@ func _ready():
 	
 	load("res://towers/Tower.gd")
 	var spawnen = false
+	await get_tree().create_timer(2.0).timeout
 	while spawnen == false:
 		spawnen = true
 		start_wave()
