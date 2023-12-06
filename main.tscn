@@ -64,7 +64,7 @@ popup/item_0/disabled = true
 popup/item_0/separator = true
 popup/item_1/text = "no save"
 popup/item_1/id = 1
-popup/item_2/text = "Profile 1"
+popup/item_2/text = "Profile 2"
 popup/item_2/id = 2
 
 [connection signal="pressed" from="StartGameButton" to="." method="_on_start_game_button_pressed"]

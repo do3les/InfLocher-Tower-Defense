@@ -1,7 +1,9 @@
 extends Node
 
 var filePath 
+var profileIndex = 1
 var profileData = {}
+var savedOnce = false
 
 func save_profile():
 	save_data()
@@ -9,12 +11,18 @@ func save_profile():
 	file.store_var(profileData)
 	file.close()
 
+func first_load(profileIndex):
+	if (profileIndex == 1 && savedOnce == false):
+		save_profile()
+		savedOnce = true
+
 func save_data():
 	profileData = {
 		"metaCoins" : metaCoins,
 	}
 
 func load_profile():
+	first_load(profileIndex)
 	var file = FileAccess.open(filePath, FileAccess.READ)
 	profileData = file.get_var()
 	file.close()

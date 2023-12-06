@@ -20,9 +20,10 @@ func _on_settings_button_pressed():
 func _on_exit_game_button_pressed():
 	get_tree().quit()
 
-
+#satndart profil ist in profilemanager festgelegt
 func _on_option_button_item_selected(index):
-	savePath = "user://profile" + str(index) + ".dat"
+	ProfileManager.profileIndex = index
+	savePath = "user://profile" + str(ProfileManager.profileIndex) + ".dat"
 	print(savePath)
 
 
