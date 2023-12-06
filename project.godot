@@ -18,6 +18,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 GameData="*res://daten/gameData.gd"
+ProfileManager="*res://Profiles/profileManager.gd"
 
 [display]
 
