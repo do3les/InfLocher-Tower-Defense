@@ -49,6 +49,25 @@ offset_bottom = 600.0
 theme = ExtResource("2_5swa3")
 text = "Exit Game"
 
+[node name="OptionButton" type="OptionButton" parent="."]
+offset_left = 1132.0
+offset_top = 304.0
+offset_right = 1288.0
+offset_bottom = 344.0
+theme = ExtResource("2_5swa3")
+item_count = 3
+selected = 0
+allow_reselect = true
+popup/item_0/text = "Player"
+popup/item_0/id = 0
+popup/item_0/disabled = true
+popup/item_0/separator = true
+popup/item_1/text = "no save"
+popup/item_1/id = 1
+popup/item_2/text = "Profile 2"
+popup/item_2/id = 2
+
 [connection signal="pressed" from="StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="ExitGameButton" to="." method="_on_exit_game_button_pressed"]
+[connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]
