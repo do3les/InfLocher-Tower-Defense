@@ -67,6 +67,4 @@ func pick_plasmids(n):
 
 
 func exit_level():
-	for child in get_children(): child.queue_free()
 	get_tree().change_scene_to_file("res://interfaceScenes/menu.tscn")
-	self.queue_free()
