@@ -10,7 +10,7 @@ var score = 0
 var coins = 0
 var health = 100
 @export var plasmidsPerEnemy = 2  # ToDo: make random
-
+@export var genePoolSize = 8
 
 func _ready():
 	enemy = load("res://enemy/baseEnemy.tscn")
@@ -35,7 +35,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	pass
+	if get_node("EnemyGenePool").get_children().size() > genePoolSize:
+		get_node("EnemyGenePool").get_child(0).queue_free()
 
 # von hand eingesetzte instace nur zum testen
 func start_wave():
