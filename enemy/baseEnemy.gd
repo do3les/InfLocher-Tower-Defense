@@ -59,7 +59,9 @@ func move_on_path(delta):
 		reached_target()
 
 func reached_target():
-	level.get_node("EnemyGenePool").add_child(get_node("DNA").get_child(0).duplicate()) # ToDo: Fix!!
+	level.get_node("EnemyGenePool").add_child(get_node("DNA").get_children() \
+	[randi() % get_node("DNA").get_children().size()].duplicate())
+	
 	level.health -= DNA["damage"]
 	queue_free()
 

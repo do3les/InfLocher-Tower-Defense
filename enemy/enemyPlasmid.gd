@@ -1,17 +1,17 @@
 @icon("res://assets/cycle.svg")
 class_name enemyPlasmid extends Node
 
+
 @export var fragment = {}
 @export var weight = 0.0
 @export var mutationStrength = 0.5
-@export var modifierActionChangeChance = 0.05
 
 func _ready():
 	self.mutate(mutationStrength)
 	
 
 
-func mutate(factor, _seed=-1):
+func mutate(factor, _seed=-1):  # ToDo: Improve!!!
 	if _seed == -1:
 		randomize()
 	else:
@@ -25,14 +25,6 @@ func mutate(factor, _seed=-1):
 				gene = gene + randf()*factor
 			"mod": # should be of the form mod = ["type", val]
 				gene[1] = gene[1] + randf()*factor
-#				if randf() < modifierActionChangeChance: # this was a bad idea :(
-#					if gene[0] == "+":
-#						gene[0] = "*"
-#					elif gene[0] == "*":
-#						gene[0] = "+"
-#					else:
-#						# other modifiers could be "=", ...
-#						print("Modifier action in gene not recognized!")
 			"dict_mult":
 				pass
 			"dict_vals":
