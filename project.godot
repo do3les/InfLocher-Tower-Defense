@@ -31,6 +31,20 @@ window/size/initial_position_type=0
 
 project/assembly_name="InfLocher Tower Defense"
 
+[file_customization]
+
+folder_colors={
+"res://Profiles/": "pink",
+"res://assets/": "red",
+"res://daten/": "orange",
+"res://enemy/": "yellow",
+"res://interfaceScenes/": "green",
+"res://levels/": "teal",
+"res://metaProgress/": "blue",
+"res://path/": "purple",
+"res://towers/": "gray"
+}
+
 [layer_names]
 
 2d_physics/layer_1="Tower"
