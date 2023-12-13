@@ -30,4 +30,13 @@ theme = ExtResource("2_jpjk1")
 shortcut = SubResource("Shortcut_uptm6")
 text = "<"
 
+[node name="Schwierigkeiten" type="Button" parent="."]
+offset_left = 56.0
+offset_top = 162.0
+offset_right = 303.0
+offset_bottom = 239.0
+tooltip_text = "Bring dich zu den Schwierigkeitseinstellungen"
+text = "Schwierigkeiten"
+
 [connection signal="pressed" from="BackButton" to="." method="_on_btn_back_pressed"]
+[connection signal="pressed" from="Schwierigkeiten" to="." method="_on_schwierigkeiten_pressed"]
