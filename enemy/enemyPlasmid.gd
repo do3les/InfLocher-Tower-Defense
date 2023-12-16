@@ -60,7 +60,7 @@ func apply_gene(DNA, key):
 		"color":
 			DNA[key] = gene
 		"shape":
-			pass
+			DNA[key] = gene
 	
 		_:
 			print("Gene type not recognized!")
