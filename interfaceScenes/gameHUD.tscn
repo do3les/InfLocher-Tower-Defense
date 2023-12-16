@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cumkwsnn0o4d1"]
+[gd_scene load_steps=11 format=3 uid="uid://cumkwsnn0o4d1"]
 
 [ext_resource type="Theme" uid="uid://detsu6arwhhvh" path="res://assets/mainTheme.tres" id="1_1bl72"]
 [ext_resource type="Script" path="res://interfaceScenes/gameHUD.gd" id="1_utb1h"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cfqiceskhvumo" path="res://assets/basicTowerHead.svg" id="5_yvtse"]
 [ext_resource type="PackedScene" uid="uid://boefrkplkw5pq" path="res://towers/shooter/Shooter.tscn" id="6_6esoi"]
 [ext_resource type="PackedScene" uid="uid://bfqj2kp3inkh8" path="res://enemy/plasmidEditor.tscn" id="7_0nnfq"]
+[ext_resource type="PackedScene" uid="uid://c1afesiel1vwb" path="res://interfaceScenes/levelEditorField.tscn" id="8_dlpfh"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_c2qyx"]
 keycode = 4194305
@@ -91,3 +92,42 @@ offset_right = 1856.0
 offset_bottom = 320.0
 
 [node name="PlasmidEditor" parent="." instance=ExtResource("7_0nnfq")]
+
+[node name="LevelEditors" type="Label" parent="."]
+offset_left = 1616.0
+offset_top = 320.0
+offset_right = 1888.0
+offset_bottom = 351.0
+text = "Level Value Editor"
+
+[node name="LevelEditorField" parent="LevelEditors" instance=ExtResource("8_dlpfh")]
+position = Vector2(0, 31)
+field = "coins"
+
+[node name="LevelEditorField2" parent="LevelEditors" instance=ExtResource("8_dlpfh")]
+position = Vector2(0, 63)
+field = "health"
+
+[node name="LevelEditorField3" parent="LevelEditors" instance=ExtResource("8_dlpfh")]
+position = Vector2(0, 126)
+field = "enemyFrequency"
+
+[node name="LevelEditorField4" parent="LevelEditors" instance=ExtResource("8_dlpfh")]
+position = Vector2(0, 158)
+field = "numberOfEnemies"
+
+[node name="LevelEditorField5" parent="LevelEditors" instance=ExtResource("8_dlpfh")]
+position = Vector2(0, 95)
+field = "score"
+
+[node name="LevelEditorField6" parent="LevelEditors" instance=ExtResource("8_dlpfh")]
+position = Vector2(0, 191)
+field = "plasmidsPerEnemy"
+
+[node name="LevelEditorField7" parent="LevelEditors" instance=ExtResource("8_dlpfh")]
+position = Vector2(0, 223)
+field = "genePoolSize"
+
+[node name="LevelEditorField8" parent="LevelEditors" instance=ExtResource("8_dlpfh")]
+position = Vector2(0, 255)
+field = "waveWait"
