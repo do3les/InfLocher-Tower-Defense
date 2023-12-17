@@ -16,10 +16,6 @@ func _input(event):
 # If possible, only use the function _process with entire methods.
 # ----> allows you to overwrite the function without losing the methods specified in there.
 
-
-
-
-
 var towerName
 var towerRange
 var towerFireRate
@@ -69,11 +65,6 @@ func spawn_bullet(bType):
 	await  get_tree().create_timer(towerFireRate).timeout
 	isReady = true
 
-
-
-
-
-
 # # # Fighting related block
 
 #recognition of the enemy
@@ -86,10 +77,6 @@ func _on_range_body_entered(body):
 
 func _on_range_body_exited(body):
 	enemyArray.erase(body.get_parent())
-
-
-
-
 
 # #targeting the enemy
 var enemy

@@ -25,3 +25,10 @@ func _on_exit_game_button_pressed():
 #satndart profil ist in profilemanager festgelegt
 func _on_option_button_item_selected(index):
 	ProfileManager.profileIndex = index
+
+
+func _on_button_pressed():
+	ProfileManager.profileIndex = 2 
+	ProfileManager.filePath = "user://profile" + str(ProfileManager.profileIndex) + ".dat"
+	ProfileManager.resetProfile()
+	ProfileManager.profileIndex = 1
