@@ -6,11 +6,13 @@ var enemy
 var towerScene
 var numberOfEnemies = 0
 var enemyFrequency = 0
+var gracePeriod = 0
+var waveWait = 0
 var score = 0
 var coins = 0
 var health = 100
-@export var plasmidsPerEnemy = 2  # ToDo: make random
-@export var genePoolSize = 8
+var plasmidsPerEnemy = 2  # ToDo: make random
+var genePoolSize = 8
 
 func _ready():
 	enemy = load("res://enemy/baseEnemy.tscn")
@@ -19,17 +21,19 @@ func _ready():
 	numberOfEnemies = GameData.levels[self.get_name()]["numberOfEnemies"]	
 	enemyFrequency = GameData.levels[self.get_name()]["enemyFrequency"]
 	coins = GameData.levels[self.get_name()]["start_coins"]
+	gracePeriod = GameData.levels[self.get_name()]["gracePeriod"]
+	waveWait = GameData.levels[self.get_name()]["waveWait"]
 	
 	get_node("HUD/StartWaveButton").pressed.connect(start_wave)
 	get_node("HUD/ExitLevelButton").pressed.connect(exit_level)
 	
 	load("res://towers/Tower.gd")
 	var spawnen = false
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(gracePeriod).timeout
 	while spawnen == false:
 		spawnen = true
 		start_wave()
-		await get_tree().create_timer(5.0).timeout
+		await get_tree().create_timer(waveWait).timeout
 		spawnen = false
 
 
@@ -40,8 +44,6 @@ func _process(_delta):
 
 # von hand eingesetzte instace nur zum testen
 func start_wave():
-
-	
 	for i in range(numberOfEnemies):
 		var enemyInstance = enemy.instantiate()
 		
@@ -69,4 +71,7 @@ func pick_plasmids(n):
 
 
 func exit_level():
+	if score > ProfileManager.profileData["Highscore"]:
+		ProfileManager.profileData["Highscore"] = score
+		ProfileManager.save_profile()
 	get_tree().change_scene_to_file("res://interfaceScenes/menu.tscn")

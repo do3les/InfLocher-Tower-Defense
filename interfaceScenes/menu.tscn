@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://71shikfqxoqx"]
+[gd_scene load_steps=6 format=3 uid="uid://71shikfqxoqx"]
 
 [ext_resource type="Script" path="res://interfaceScenes/menu.gd" id="1_d4jp2"]
 [ext_resource type="Theme" uid="uid://detsu6arwhhvh" path="res://assets/mainTheme.tres" id="2_5cn45"]
+[ext_resource type="PackedScene" uid="uid://kcgx30huew1l" path="res://Profiles/profileStatViewer.tscn" id="3_rlumg"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_be815"]
 keycode = 4194305
@@ -36,6 +37,9 @@ offset_bottom = 97.0
 theme = ExtResource("2_5cn45")
 shortcut = SubResource("Shortcut_4oxa0")
 text = "<"
+
+[node name="ProfileStatViewer" parent="." instance=ExtResource("3_rlumg")]
+position = Vector2(1576, 99)
 
 [connection signal="pressed" from="Level1Button" to="." method="_on_buttonLvl1_pressed"]
 [connection signal="pressed" from="ShopButton" to="." method="_on_shop_button_pressed"]
