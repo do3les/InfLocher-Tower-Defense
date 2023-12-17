@@ -43,6 +43,6 @@ shortcut = SubResource("Shortcut_2ka8e")
 text = "<"
 
 [connection signal="pressed" from="Einfach" to="." method="_on_einfach_pressed"]
-[connection signal="pressed" from="Mittel" to="Einfach" method="_on_mittel_pressed"]
-[connection signal="pressed" from="Schwer" to="Einfach" method="_on_schwer_pressed"]
+[connection signal="pressed" from="Mittel" to="." method="_on_mittel_pressed"]
+[connection signal="pressed" from="Schwer" to="." method="_on_schwer_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

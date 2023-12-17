@@ -11,17 +11,21 @@ func _process(delta):
 	pass
 
 
-func _on_mittel_pressed():
-	pass # Replace with function body.
 
+
+func _on_mittel_pressed():
+	Schwierigkeit.schwierigkeitsgrad = 2
+	Schwierigkeit.set_multipliers()
 
 func _on_schwer_pressed():
-	pass # Replace with function body.
+	Schwierigkeit.schwierigkeitsgrad = 3
+	Schwierigkeit.set_multipliers()
 
 
 func _on_einfach_pressed():
-	pass # Replace with function body.
+	Schwierigkeit.schwierigkeitsgrad = 1
+	Schwierigkeit.set_multipliers()
 
 
 func _on_back_button_pressed():
-	get_tree().change_scene_to_file("res://main.tscn")
+	get_tree().change_scene_to_file("res://interfaceScenes/settings.tscn")
