@@ -1,7 +1,8 @@
 extends Node2D
 
 func _ready():
-	print(ProfileManager.metaCoins)
+	#print(ProfileManager.profileData["Metacoins"])
+	pass
 
 func _on_buttonLvl1_pressed():
 	get_tree().change_scene_to_file("res://levels/level1.tscn")
@@ -12,4 +13,6 @@ func _on_back_button_pressed():
 
 
 func _on_shop_button_pressed():
-	get_tree().change_scene_to_file("res://metaProgress/MetaShop.tscn")
+	#get_tree().change_scene_to_file("res://metaProgress/MetaShop.tscn")
+	ProfileManager.profileData["Metacoins"] += 50
+	ProfileManager.save_profile()

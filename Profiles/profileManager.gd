@@ -5,8 +5,20 @@ var profileIndex = 1
 var profileData = {}
 var savedOnce = false
 
+func _ready():
+	profileData = {
+		"Metacoins": 0,
+		"Highscore": 0,
+	}
+
+func resetProfile():
+	profileData = {
+		"Metacoins": 0,
+		"Highscore": 0,
+	}
+	save_profile()
+
 func save_profile():
-	save_data()
 	var file = FileAccess.open(filePath, FileAccess.WRITE)
 	file.store_var(profileData)
 	file.close()
@@ -16,20 +28,12 @@ func first_load(profileIndex):
 		save_profile()
 		savedOnce = true
 
-func save_data():
-	profileData = {
-		"metaCoins" : metaCoins,
-	}
-
 func load_profile():
 	first_load(profileIndex)
 	var file = FileAccess.open(filePath, FileAccess.READ)
 	profileData = file.get_var()
 	file.close()
-	unpack_load()
 
-
-func unpack_load():
-	metaCoins = profileData["metaCoins"]
-
-var metaCoins
+func set_and_Save(name, value):
+	profileData[name] = value
+	save_profile()

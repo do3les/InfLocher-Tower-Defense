@@ -1,6 +1,5 @@
 extends Node
 
-
 var towerStats = {
 	"shooter":{
 		"range": 300,
@@ -68,7 +67,6 @@ var levels = {
 		"enemyFrequency":10,
 		"start_coins":100
 	}
-	
 }
 
 

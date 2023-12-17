@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ct1qj37p5o6bn"]
 
-[ext_resource type="Script" path="res://metaProgress/TestSpeichern.gd" id="1_k2mqh"]
+[ext_resource type="Script" path="res://Profiles/metaProgress/TestSpeichern.gd" id="1_k2mqh"]
 [ext_resource type="Theme" uid="uid://detsu6arwhhvh" path="res://assets/mainTheme.tres" id="2_ayrdk"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_be815"]

@@ -40,8 +40,6 @@ func _process(_delta):
 
 # von hand eingesetzte instace nur zum testen
 func start_wave():
-
-	
 	for i in range(numberOfEnemies):
 		var enemyInstance = enemy.instantiate()
 		
@@ -69,4 +67,7 @@ func pick_plasmids(n):
 
 
 func exit_level():
+	if score > ProfileManager.profileData["Highscore"]:
+		ProfileManager.profileData["Highscore"] = score
+		ProfileManager.save_profile()
 	get_tree().change_scene_to_file("res://interfaceScenes/menu.tscn")
