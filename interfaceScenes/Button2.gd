@@ -1,4 +1,4 @@
-extends Node2D
+extends Button
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,9 +11,13 @@ func _process(delta):
 	pass
 
 
-func _on_btn_back_pressed():
-	get_tree().change_scene_to_file("res://main.tscn")
+func _on_mittel_pressed():
+	pass # Replace with function body.
 
 
-func _on_schwierigkeiten_pressed():
-	get_tree().change_scene_to_file("res://interfaceScenes/Schwierigkeiten.tscn")
+func _on_pressed():
+	pass # Replace with function body.
+
+
+func _on_schwer_pressed():
+	pass # Replace with function body.

@@ -12,13 +12,14 @@ config_version=5
 
 config/name="InfLocher Tower Defense"
 run/main_scene="res://main.tscn"
-config/features=PackedStringArray("4.2", "Forward Plus")
+config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
 [autoload]
 
 GameData="*res://daten/gameData.gd"
 ProfileManager="*res://Profiles/profileManager.gd"
+Schwierigkeit="*res://daten/schwierigkeit.gd"
 
 [display]
 
