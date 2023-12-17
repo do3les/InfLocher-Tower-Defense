@@ -54,7 +54,7 @@ fragment = {
 script = ExtResource("4_2b5hb")
 fragment = {
 "coins": ["+", 5.0],
-"color": Color(0.415686, 0.2, 0.0784314, 1),
 "damage": ["+", 10.0],
-"score": ["*", 3.0]
+"score": ["*", 3.0],
+"shape": "res://assets/shapes/circle.tres"
 }
