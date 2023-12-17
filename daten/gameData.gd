@@ -1,6 +1,5 @@
 extends Node
 
-
 var towerStats = {
 	"shooter":{
 		"range": 300,
@@ -70,7 +69,6 @@ var levels = {
 		"gracePeriod": 2.0,
 		"waveWait": 5.0
 	}
-	
 }
 
 
