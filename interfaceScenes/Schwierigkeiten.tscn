@@ -1,3 +1,48 @@
-[gd_scene format=3 uid="uid://t63o0tmiedhw"]
+[gd_scene load_steps=5 format=3 uid="uid://t63o0tmiedhw"]
+
+[ext_resource type="Script" path="res://interfaceScenes/Schwierigkeiten.gd" id="1_gmsel"]
+[ext_resource type="Theme" uid="uid://detsu6arwhhvh" path="res://assets/mainTheme.tres" id="2_q0b85"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_be815"]
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_2ka8e"]
+events = [SubResource("InputEventKey_be815")]
 
 [node name="Schwierigkeiten" type="Node2D"]
+script = ExtResource("1_gmsel")
+
+[node name="Einfach" type="Button" parent="."]
+offset_left = 108.0
+offset_top = 231.0
+offset_right = 481.0
+offset_bottom = 403.0
+text = "Einfach"
+
+[node name="Mittel" type="Button" parent="."]
+offset_left = 655.0
+offset_top = 238.0
+offset_right = 1098.0
+offset_bottom = 403.0
+text = "Mittel"
+
+[node name="Schwer" type="Button" parent="."]
+offset_left = 1288.0
+offset_top = 234.0
+offset_right = 1727.0
+offset_bottom = 396.0
+text = "Schwer"
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 32.0
+offset_top = 56.0
+offset_right = 92.0
+offset_bottom = 107.0
+theme = ExtResource("2_q0b85")
+shortcut = SubResource("Shortcut_2ka8e")
+text = "<"
+
+[connection signal="pressed" from="Einfach" to="." method="_on_einfach_pressed"]
+[connection signal="pressed" from="Mittel" to="." method="_on_mittel_pressed"]
+[connection signal="pressed" from="Schwer" to="." method="_on_schwer_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
