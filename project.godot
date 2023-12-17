@@ -36,7 +36,8 @@ project/assembly_name="InfLocher Tower Defense"
 folder_colors={
 "res://Profiles/": "pink",
 "res://Profiles/metaProgress/": "blue",
-"res://assets/": "red",
+"res://assets/": "purple",
+"res://builds/": "red",
 "res://daten/": "orange",
 "res://enemy/": "yellow",
 "res://interfaceScenes/": "green",
