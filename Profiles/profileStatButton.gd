@@ -10,8 +10,7 @@ func _ready():
 	select(0)
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_text_backspace") == true:
-		refresh()
+	refresh()
 
 func addStats():
 	for stat in ProfileManager.profileData:
