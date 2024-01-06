@@ -107,3 +107,6 @@ func turn():
 #bulletType = path to the bullet that the tower shoots
 var isReady = true
 var bullet
+
+
+
