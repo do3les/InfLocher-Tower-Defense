@@ -73,10 +73,18 @@ offset_top = 308.0
 offset_right = 1443.0
 offset_bottom = 341.0
 theme = ExtResource("2_5swa3")
-text = "resset all profiles"
+text = "reset all profiles"
+
+[node name="DebugButton" type="CheckButton" parent="."]
+offset_left = 1136.0
+offset_top = 384.0
+offset_right = 1281.0
+offset_bottom = 451.0
+text = "debug mode"
 
 [connection signal="pressed" from="StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="ExitGameButton" to="." method="_on_exit_game_button_pressed"]
 [connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="toggled" from="DebugButton" to="." method="_on_check_button_toggled"]

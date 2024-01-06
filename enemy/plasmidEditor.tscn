@@ -1,43 +1,51 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfqj2kp3inkh8"]
+[gd_scene load_steps=4 format=3 uid="uid://bfqj2kp3inkh8"]
 
 [ext_resource type="Script" path="res://enemy/plasmidEditor.gd" id="1_nxp2q"]
 [ext_resource type="Texture2D" uid="uid://cx6p3nlh6ryuj" path="res://assets/dna1.svg" id="2_js4il"]
+[ext_resource type="Script" path="res://enemy/PlasmidEditorDismiss Button.gd" id="3_vlfsl"]
 
 [node name="PlasmidEditor" type="Node2D"]
 script = ExtResource("1_nxp2q")
 
 [node name="PlasmidList" type="ItemList" parent="."]
-offset_left = 320.0
-offset_top = 864.0
-offset_right = 704.0
-offset_bottom = 1056.0
+offset_top = 56.0
+offset_right = 384.0
+offset_bottom = 248.0
 
 [node name="Label" type="Label" parent="."]
-offset_left = 320.0
-offset_top = 808.0
-offset_right = 632.0
-offset_bottom = 864.0
+offset_right = 312.0
+offset_bottom = 56.0
 text = "enemyDNA Level Plasmid Editor"
 vertical_alignment = 1
 
 [node name="PlasmidEdit" type="CodeEdit" parent="."]
-offset_left = 720.0
-offset_top = 864.0
-offset_right = 1344.0
-offset_bottom = 1056.0
+offset_left = 400.0
+offset_top = 56.0
+offset_right = 1024.0
+offset_bottom = 248.0
 placeholder_text = "Oh no!
 
-Something is broken. Most likely you forgot to add any plasmids to the level,
-so there is nothing to display."
+If you're seeing this in-game (outside the editor) something is broken. 
+Most likely you forgot to add any plasmids to the level, so there is nothing 
+to display."
 
 [node name="ConfirmButton" type="Button" parent="."]
-offset_left = 1360.0
-offset_top = 864.0
-offset_right = 1448.0
-offset_bottom = 1056.0
+offset_left = 1040.0
+offset_top = 56.0
+offset_right = 1128.0
+offset_bottom = 248.0
 icon = ExtResource("2_js4il")
 expand_icon = true
+
+[node name="Dismiss Button" type="Button" parent="."]
+offset_left = 1144.0
+offset_top = 192.0
+offset_right = 1224.0
+offset_bottom = 248.0
+text = "v"
+script = ExtResource("3_vlfsl")
 
 [connection signal="item_activated" from="PlasmidList" to="." method="_on_plasmid_list_item_activated"]
 [connection signal="item_selected" from="PlasmidList" to="." method="_on_plasmid_list_item_activated"]
 [connection signal="pressed" from="ConfirmButton" to="." method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="Dismiss Button" to="Dismiss Button" method="_on_pressed"]

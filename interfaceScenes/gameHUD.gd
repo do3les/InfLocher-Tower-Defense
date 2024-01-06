@@ -9,3 +9,7 @@ func _process(_delta):
 	get_node("ScoreLable").text = "Score: " + str(get_parent().score)
 	
 	get_node("CoinsLabel").text = "Coins: " + str(get_parent().coins)
+
+func _ready():
+	if GameData.debug == false:
+		get_children()[-1].queue_free()

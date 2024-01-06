@@ -32,3 +32,7 @@ func _on_button_pressed():
 	ProfileManager.filePath = "user://profile" + str(ProfileManager.profileIndex) + ".dat"
 	ProfileManager.resetProfile()
 	ProfileManager.profileIndex = 1
+
+
+func _on_check_button_toggled(toggled_on):
+	GameData.debug = toggled_on

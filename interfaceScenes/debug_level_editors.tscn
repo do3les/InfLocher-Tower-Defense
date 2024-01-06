@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://wye3ifl6ak8u"]
+
+[ext_resource type="PackedScene" uid="uid://c1afesiel1vwb" path="res://interfaceScenes/levelEditorField.tscn" id="1_chn60"]
+[ext_resource type="Script" path="res://interfaceScenes/LevelValueEditorDismiss Button.gd" id="2_f24wj"]
+
+[node name="LevelEditors" type="Label"]
+offset_right = 192.0
+offset_bottom = 31.0
+text = "Level Value Editor"
+
+[node name="LevelEditorField" parent="." instance=ExtResource("1_chn60")]
+position = Vector2(0, 31)
+field = "coins"
+
+[node name="LevelEditorField2" parent="." instance=ExtResource("1_chn60")]
+position = Vector2(0, 63)
+field = "health"
+
+[node name="LevelEditorField3" parent="." instance=ExtResource("1_chn60")]
+position = Vector2(0, 126)
+field = "enemyFrequency"
+
+[node name="LevelEditorField4" parent="." instance=ExtResource("1_chn60")]
+position = Vector2(0, 158)
+field = "numberOfEnemies"
+
+[node name="LevelEditorField5" parent="." instance=ExtResource("1_chn60")]
+position = Vector2(0, 95)
+field = "score"
+
+[node name="LevelEditorField6" parent="." instance=ExtResource("1_chn60")]
+position = Vector2(0, 191)
+field = "plasmidsPerEnemy"
+
+[node name="LevelEditorField7" parent="." instance=ExtResource("1_chn60")]
+position = Vector2(0, 223)
+field = "genePoolSize"
+
+[node name="LevelEditorField8" parent="." instance=ExtResource("1_chn60")]
+position = Vector2(0, 255)
+field = "waveWait"
+
+[node name="Dismiss Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 192.0
+offset_top = -8.0
+offset_right = 272.0
+offset_bottom = 24.0
+text = ">"
+script = ExtResource("2_f24wj")
+
+[connection signal="pressed" from="Dismiss Button" to="Dismiss Button" method="_on_pressed"]

@@ -1,5 +1,7 @@
 extends Node
 
+var debug = false
+
 var towerStats = {
 	"shooter":{
 		"range": 300,
