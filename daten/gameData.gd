@@ -4,13 +4,11 @@ var debug = false
 
 var towerStats = {
 	"shooter":{
-		"range": 300,
+		"range": 150,
 		"towerFireRate": 1,
-		
 		"bulletType": "res://towers/shooter/shooterBullet.tscn",
 		"bulletName": "bullet",
 		"istGegner": "keinGegner",
-		
 		"bullet":
 			{
 			"bulletDamage": 50.0,

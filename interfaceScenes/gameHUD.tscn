@@ -62,7 +62,13 @@ offset_left = 64.0
 offset_top = 906.0
 offset_right = 182.0
 offset_bottom = 1024.0
+text = "Cost: ...
+
+
+
+"
 icon = ExtResource("5_yvtse")
+alignment = 0
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("5_h8wfr")

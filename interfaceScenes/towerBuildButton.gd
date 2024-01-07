@@ -1,11 +1,10 @@
 extends Button
 @export var tower: PackedScene
 
-var price
+@export var price = 50
 
 
 func _ready():
-	price = 10
 	self.connect("pressed", build_tower)
 
 
