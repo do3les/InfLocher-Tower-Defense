@@ -29,7 +29,7 @@ var bulletPiercing
 
 func declare_tower_stats():
 	# general Stats
-	towerRange = GameData.towerStats[towerName]["range"]
+	towerRange = GameData.towerStats[towerName]["range"] + ProfileManager.profileData["Bonus Towerrange"]
 	set_tower_range(towerRange)
 	towerFireRate = GameData.towerStats[towerName]["towerFireRate"] * Schwierigkeit.attackSpeedMultiplier
 	bulletType = GameData.towerStats[towerName]["bulletType"]

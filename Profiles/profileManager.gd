@@ -10,7 +10,7 @@ func _ready():
 		"Metacoins": 0,
 		"Highscore": 0,
 		"DmgUp": 0,
-		"TowerCap": 2,
+		"Bonus Towerrange": 0,
 		"CoinMultiplier": 1,
 		"MetacoinChance": 0.02,
 	}
@@ -20,7 +20,7 @@ func resetProfile():
 		"Metacoins": 0,
 		"Highscore": 0,
 		"DmgUp": 0,
-		"TowerCap": 2,
+		"Bonus Towerrange": 0,
 		"CoinMultiplier": 1,
 		"MetacoinChance": 0.02,
 	}
