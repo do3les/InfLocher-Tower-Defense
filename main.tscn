@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b75klh3ofo8ov"]
+[gd_scene load_steps=4 format=3 uid="uid://b75klh3ofo8ov"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_xkm4k"]
 [ext_resource type="Theme" uid="uid://detsu6arwhhvh" path="res://assets/mainTheme.tres" id="2_5swa3"]
+[ext_resource type="Texture2D" uid="uid://cx8ulskjqhvo7" path="res://assets/icon.svg" id="3_1jsc6"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_xkm4k")
@@ -81,6 +82,12 @@ offset_top = 384.0
 offset_right = 1281.0
 offset_bottom = 451.0
 text = "debug mode"
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(0.196078, 0.196078, 0.196078, 0.117647)
+position = Vector2(960, 540)
+scale = Vector2(9.375, 9.375)
+texture = ExtResource("3_1jsc6")
 
 [connection signal="pressed" from="StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
