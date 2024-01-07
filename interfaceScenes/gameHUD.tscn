@@ -45,10 +45,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ScoreLable" type="Label" parent="."]
-offset_left = 1664.0
-offset_top = 192.0
-offset_right = 1856.0
-offset_bottom = 256.0
+offset_left = 1665.0
+offset_top = 150.0
+offset_right = 1857.0
+offset_bottom = 214.0
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -93,9 +93,15 @@ text = "ESC"
 
 [node name="CoinsLabel" type="Label" parent="."]
 offset_left = 1664.0
-offset_top = 256.0
+offset_top = 170.0
 offset_right = 1856.0
-offset_bottom = 320.0
+offset_bottom = 234.0
+
+[node name="MetacoinLabel" type="Label" parent="."]
+offset_left = 1665.0
+offset_top = 190.0
+offset_right = 1857.0
+offset_bottom = 254.0
 
 [node name="Debug Editors" type="Node" parent="."]
 

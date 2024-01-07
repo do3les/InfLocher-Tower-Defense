@@ -36,15 +36,15 @@ offset_top = 70.0
 offset_right = 40.0
 offset_bottom = 93.0
 
-[node name="TowerCapButton" type="Button" parent="."]
+[node name="TowerRangeButton" type="Button" parent="."]
 offset_left = 150.0
 offset_top = 300.0
 offset_right = 313.0
 offset_bottom = 368.0
 theme = ExtResource("2_ayrdk")
-text = "+ 1 tower cap"
+text = "+ 20 Towerrange"
 
-[node name="Label" type="Label" parent="TowerCapButton"]
+[node name="Label" type="Label" parent="TowerRangeButton"]
 layout_mode = 0
 offset_top = 70.0
 offset_right = 40.0
@@ -69,3 +69,5 @@ position = Vector2(1576, 99)
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="DmgUpButton" to="." method="_on_dmg_up_button_pressed"]
+[connection signal="pressed" from="TowerRangeButton" to="." method="_on_tower_cap_button_pressed"]
+[connection signal="pressed" from="MetaCoinChanceButton" to="." method="_on_meta_coin_chance_button_pressed"]
