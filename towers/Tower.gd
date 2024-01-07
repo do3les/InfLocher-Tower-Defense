@@ -42,7 +42,7 @@ func set_tower_range(tRange):
 
 func declare_bulletStats():
 	# Stats of the Bullet declared as variable so damge can be upgraded etc
-	bulletDamage = GameData.towerStats[towerName][bulletName]["bulletDamage"] * Schwierigkeit.damageMultiplier
+	bulletDamage = (GameData.towerStats[towerName][bulletName]["bulletDamage"] + ProfileManager.profileData["DmgUp"]) * Schwierigkeit.damageMultiplier
 	bulletSpeed = GameData.towerStats[towerName][bulletName]["bulletSpeed"]
 	bulletTravelTime = GameData.towerStats[towerName][bulletName]["bulletTravelTime"]
 	bulletPiercing = GameData.towerStats[towerName][bulletName]["bulletPiercing"]

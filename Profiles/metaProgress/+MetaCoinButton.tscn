@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cylieq7ir3yp3"]
+
+[ext_resource type="Script" path="res://Profiles/metaProgress/+MetaCoinButton.gd" id="1_1sd82"]
+[ext_resource type="Theme" uid="uid://detsu6arwhhvh" path="res://assets/mainTheme.tres" id="1_y510a"]
+
+[node name="+metaCoinButton" type="Node2D"]
+script = ExtResource("1_1sd82")
+
+[node name="+MetaCoinButton" type="Button" parent="."]
+offset_right = 163.0
+offset_bottom = 68.0
+theme = ExtResource("1_y510a")
+text = "+ 100 MetaCoins"
+
+[connection signal="pressed" from="+MetaCoinButton" to="." method="_on_meta_coin_button_pressed"]

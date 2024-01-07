@@ -13,6 +13,4 @@ func _on_back_button_pressed():
 
 
 func _on_shop_button_pressed():
-	#get_tree().change_scene_to_file("res://metaProgress/MetaShop.tscn")
-	ProfileManager.profileData["Metacoins"] += 50
-	ProfileManager.save_profile()
+	get_tree().change_scene_to_file("res://Profiles/metaProgress/MetaShop.tscn")

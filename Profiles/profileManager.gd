@@ -9,12 +9,20 @@ func _ready():
 	profileData = {
 		"Metacoins": 0,
 		"Highscore": 0,
+		"DmgUp": 0,
+		"TowerCap": 2,
+		"CoinMultiplier": 1,
+		"MetacoinChance": 0.02,
 	}
 
 func resetProfile():
 	profileData = {
 		"Metacoins": 0,
 		"Highscore": 0,
+		"DmgUp": 0,
+		"TowerCap": 2,
+		"CoinMultiplier": 1,
+		"MetacoinChance": 0.02,
 	}
 	save_profile()
 
