@@ -41,6 +41,9 @@ func _ready():
 func _process(_delta):
 	if get_node("EnemyGenePool").get_children().size() > genePoolSize:
 		get_node("EnemyGenePool").get_child(0).queue_free()
+	if (health <= 0 && GameData.debug != true):
+		exit_level()
+
 
 # von hand eingesetzte instace nur zum testen
 func start_wave():
