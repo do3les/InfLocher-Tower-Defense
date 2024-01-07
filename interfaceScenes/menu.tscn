@@ -22,12 +22,12 @@ theme = ExtResource("2_5cn45")
 text = "Level 1"
 
 [node name="ShopButton" type="Button" parent="."]
-offset_left = 481.0
-offset_top = 224.0
-offset_right = 671.0
-offset_bottom = 290.0
+offset_left = 1352.0
+offset_top = 99.0
+offset_right = 1542.0
+offset_bottom = 156.0
 theme = ExtResource("2_5cn45")
-text = "Bsp Button Shop"
+text = "Metacoins Shop"
 
 [node name="BackButton" type="Button" parent="."]
 offset_left = 32.0
