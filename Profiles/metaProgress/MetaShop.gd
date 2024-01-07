@@ -24,6 +24,9 @@ func _process(delta):
 	
 	towerRangePrice = 5 + int(4 * ProfileManager.profileData["Bonus Towerrange"]/20)
 	TowerRangeLabel.text = "Cost:  " + str(towerRangePrice) + " Metacoins"
+	
+	metaCoinChancePrice = 50 + int((ProfileManager.profileData["MetacoinChance"] - 0.02)/0.02 * 15)
+	metaCoinChanceLabel.text = "Cost:  " + str(metaCoinChancePrice) + " Metacoins"
 
 func _on_back_button_pressed():
 	ProfileManager.save_profile()
@@ -39,4 +42,10 @@ func _on_tower_cap_button_pressed():
 	if ProfileManager.profileData["Metacoins"] >= towerRangePrice:
 		ProfileManager.profileData["Metacoins"] -= towerRangePrice
 		ProfileManager.profileData["Bonus Towerrange"] += 20
+	ProfileManager.save_profile()
+
+func _on_meta_coin_chance_button_pressed():
+	if ProfileManager.profileData["Metacoins"] >= metaCoinChancePrice:
+		ProfileManager.profileData["Metacoins"] -= metaCoinChancePrice
+		ProfileManager.profileData["MetacoinChance"] += 0.02
 	ProfileManager.save_profile()

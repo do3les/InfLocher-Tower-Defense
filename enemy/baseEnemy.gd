@@ -43,6 +43,10 @@ func _physics_process(delta):
 
 func die():
 	queue_free()
+	var chance = randf_range(0, 100)
+	ProfileManager.profileData["Metacoins"] += int(ProfileManager.profileData["MetacoinChance"]/1)
+	if ProfileManager.profileData["MetacoinChance"] % 1 >= chance:
+		ProfileManager.profileData["Metacoins"] += 1
 	level.score += int(DNA["score"])
 	level.coins += int(DNA["coins"])
 

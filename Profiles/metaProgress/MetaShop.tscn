@@ -70,3 +70,4 @@ position = Vector2(1576, 99)
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="DmgUpButton" to="." method="_on_dmg_up_button_pressed"]
 [connection signal="pressed" from="TowerRangeButton" to="." method="_on_tower_cap_button_pressed"]
+[connection signal="pressed" from="MetaCoinChanceButton" to="." method="_on_meta_coin_chance_button_pressed"]
