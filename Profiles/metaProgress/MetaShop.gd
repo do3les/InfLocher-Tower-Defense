@@ -29,5 +29,7 @@ func _on_back_button_pressed():
 
 
 func _on_dmg_up_button_pressed():
-	ProfileManager.profileData["DmgUp"] += 1
+	if ProfileManager.profileData["Metacoins"] >= dmgUpPrice:
+		ProfileManager.profileData["Metacoins"] -= dmgUpPrice
+		ProfileManager.profileData["DmgUp"] += 1
 	ProfileManager.save_profile()
