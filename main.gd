@@ -3,6 +3,9 @@ extends Node2D
 var profile;
 var savePath
 
+func _ready():
+	$DebugButton.button_pressed = GameData.debug
+
 func _on_start_game_button_pressed():
 	get_tree().change_scene_to_file("res://interfaceScenes/menu.tscn")
 	print("profile2 selected")
