@@ -1,46 +1,171 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5rtkwtriush3"]
+[gd_scene load_steps=15 format=3 uid="uid://c5rtkwtriush3"]
 
 [ext_resource type="Script" path="res://towers/Upgrades/upgrade_ui.gd" id="1_c4maw"]
+[ext_resource type="Theme" uid="uid://detsu6arwhhvh" path="res://assets/mainTheme.tres" id="2_va6md"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2vyon"]
+bg_color = Color(0.501961, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8xiob"]
+bg_color = Color(0.25098, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bo1up"]
+bg_color = Color(0.12549, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id="Theme_p0hwp"]
+Button/styles/hover = SubResource("StyleBoxFlat_2vyon")
+Button/styles/normal = SubResource("StyleBoxFlat_8xiob")
+Button/styles/pressed = SubResource("StyleBoxFlat_bo1up")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bnmui"]
+bg_color = Color(0, 0, 0.501961, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qn5ge"]
+bg_color = Color(0, 0, 0.25098, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ibae0"]
+bg_color = Color(0, 0, 0.12549, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id="Theme_qgmqi"]
+Button/styles/hover = SubResource("StyleBoxFlat_bnmui")
+Button/styles/normal = SubResource("StyleBoxFlat_qn5ge")
+Button/styles/pressed = SubResource("StyleBoxFlat_ibae0")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wfoej"]
+bg_color = Color(0, 0.501961, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3gitg"]
+bg_color = Color(0, 0.25098, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sdsne"]
+bg_color = Color(0, 0.12549, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id="Theme_2dr67"]
+Button/styles/hover = SubResource("StyleBoxFlat_wfoej")
+Button/styles/normal = SubResource("StyleBoxFlat_3gitg")
+Button/styles/pressed = SubResource("StyleBoxFlat_sdsne")
 
 [node name="Upgrade UI" type="Node2D"]
 position = Vector2(25, 0)
 script = ExtResource("1_c4maw")
 
 [node name="Damage" type="Button" parent="."]
-z_index = -1
 offset_right = 131.0
 offset_bottom = 102.0
 tooltip_text = "Increases Damage by 100%"
+theme = SubResource("Theme_p0hwp")
+theme_type_variation = &"ButtonDamage"
 text = "Damage
 20$"
 metadata/_edit_use_anchors_ = true
 
 [node name="Remover" type="Button" parent="."]
-z_index = -1
 offset_left = 451.0
 offset_right = 582.0
 offset_bottom = 102.0
+theme = ExtResource("2_va6md")
 text = "Remove latest 
 Upgrade - 0$"
 metadata/_edit_use_anchors_ = true
 
 [node name="Pierce" type="Button" parent="."]
-z_index = -1
 offset_left = 150.0
 offset_top = 1.0
 offset_right = 281.0
 offset_bottom = 103.0
 tooltip_text = "Increases Pierce by 1"
+theme = SubResource("Theme_qgmqi")
 text = "Pierce
 20$"
 metadata/_edit_use_anchors_ = true
 
 [node name="AttackSpeed" type="Button" parent="."]
-z_index = -1
 offset_left = 300.0
 offset_right = 431.0
 offset_bottom = 102.0
 tooltip_text = "Increases Attack Speed by 100%"
+theme = SubResource("Theme_2dr67")
 text = "Attack Speed
 20$"
 metadata/_edit_use_anchors_ = true
