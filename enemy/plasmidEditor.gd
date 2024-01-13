@@ -1,7 +1,7 @@
 extends Node2D
 
 var index = 0
-@onready var plasmids = get_node("/root/Level1/EnemyGenePool").get_children()
+@onready var plasmids = get_node("/root/Level/EnemyGenePool").get_children()
 @onready var current = plasmids[index]
 
 func _ready():
@@ -10,7 +10,7 @@ func _ready():
 
 
 func update():
-	plasmids = get_node("/root/Level1/EnemyGenePool").get_children()
+	plasmids = get_node("/root/Level/EnemyGenePool").get_children()
 	$PlasmidList.clear()
 	for plasmid in plasmids:
 		$PlasmidList.add_item(plasmid.name)

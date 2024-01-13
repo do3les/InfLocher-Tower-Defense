@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var field = "don't forget to set this field!"
-@onready var level = get_node("/root/Level1")
+@onready var level = get_node("/root/Level")
 var focus = false
 
 # Called when the node enters the scene tree for the first time.

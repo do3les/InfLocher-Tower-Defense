@@ -15,11 +15,11 @@ func _ready():
 
 
 func _on_damage_pressed():
-	if upgrades > 0 && get_node("/root/Level1").coins>20:
+	if upgrades > 0 && get_node("/root/Level").coins>20:
 		upnode.upgrades -= 1
 		upnode.bulletDamage = upnode.bulletDamage * (upnode.damageUp + 2 )/(upnode.damageUp + 1) 
 		upnode.damageUp += 1
-		get_node("/root/Level1").coins-=20
+		get_node("/root/Level").coins-=20
 		if upgrades == 4:
 			get_node("./../Upgrade4").color = Color("ff0000")
 			r4="damage"
@@ -36,11 +36,11 @@ func _on_damage_pressed():
 
 
 func _on_attack_speed_pressed():
-	if upgrades > 0 && get_node("/root/Level1").coins>20:
+	if upgrades > 0 && get_node("/root/Level").coins>20:
 		upnode.upgrades -= 1
 		upnode.towerFireRate = upnode.towerFireRate / (upnode.attackSpeedUp + 1 )*(upnode.attackSpeedUp + 0.5)
 		upnode.attackSpeedUp += 1
-		get_node("/root/Level1").coins-=20
+		get_node("/root/Level").coins-=20
 		if upgrades == 4:
 			get_node("./../Upgrade4").color = Color("00ff00")
 			r4="speed"
@@ -58,11 +58,11 @@ func _on_attack_speed_pressed():
 
 
 func _on_pierce_pressed():
-	if upgrades > 0 && get_node("/root/Level1").coins>20:
+	if upgrades > 0 && get_node("/root/Level").coins>20:
 		upnode.upgrades -= 1
 		upnode.bulletPiercing += 1
 		upnode.pierceUp += 1
-		get_node("/root/Level1").coins-=20
+		get_node("/root/Level").coins-=20
 		if upgrades == 4:
 			get_node("./../Upgrade4").color = Color("0000ff")
 			r4= "pierce"

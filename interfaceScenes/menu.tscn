@@ -41,6 +41,15 @@ text = "<"
 [node name="ProfileStatViewer" parent="." instance=ExtResource("3_rlumg")]
 position = Vector2(1576, 99)
 
+[node name="Level2Button" type="Button" parent="."]
+offset_left = 400.0
+offset_top = 217.0
+offset_right = 563.0
+offset_bottom = 285.0
+theme = ExtResource("2_5cn45")
+text = "Level 2"
+
 [connection signal="pressed" from="Level1Button" to="." method="_on_buttonLvl1_pressed"]
 [connection signal="pressed" from="ShopButton" to="." method="_on_shop_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Level2Button" to="." method="_on_level_2_button_pressed"]

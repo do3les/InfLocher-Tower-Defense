@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://may7ft4rhdxh"]
+
+[ext_resource type="Script" path="res://levels/level1.gd" id="1_6y3m4"]
+[ext_resource type="PackedScene" uid="uid://bictxwblu0emk" path="res://path/path.tscn" id="1_syuyu"]
+[ext_resource type="PackedScene" uid="uid://cumkwsnn0o4d1" path="res://interfaceScenes/gameHUD.tscn" id="2_h3r0w"]
+[ext_resource type="Script" path="res://enemy/enemyPlasmid.gd" id="3_x384f"]
+
+[sub_resource type="Curve2D" id="Curve2D_5xwaf"]
+resource_local_to_scene = true
+bake_interval = 64.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -621, -157, -225.893, 32.7677, 225.893, -32.7677, -253, -229, -55.0921, -86.876, 55.0921, 86.876, 103, -199, -12.268, -123.029, 12.268, 123.029, 161, 87, 169.894, -142.63, -169.894, 142.63, 63, 485, 13.4888, 129.621, -13.4888, -129.621, -551, 263, -152.827, 73.4171, 152.827, -73.4171, -308, -112, -192.298, -12.4145, 192.298, 12.4145, 367, -91, -57.1745, -224.658, 57.1745, 224.658, 792, 138, 92.8951, 358.095, -92.8951, -358.095, 428, 405, -70.0386, 30.3662, 70.0386, -30.3662, 829, -65, 0, 0, 0, 0, 983, 51)
+}
+point_count = 12
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_6y3m4")
+level = 2
+
+[node name="Path" parent="." instance=ExtResource("1_syuyu")]
+position = Vector2(766, 359)
+curve = SubResource("Curve2D_5xwaf")
+
+[node name="HUD" parent="." instance=ExtResource("2_h3r0w")]
+
+[node name="Towers" type="Node" parent="."]
+
+[node name="EnemyGenePool" type="Node" parent="."]
+
+[node name="Plasmid1" type="Node" parent="EnemyGenePool"]
+script = ExtResource("3_x384f")
+fragment = {
+"health": ["+", -80.0],
+"shape": "res://assets/shapes/circle.tres",
+"speed": ["*", 1.75]
+}
+
+[node name="Plasmid2" type="Node" parent="EnemyGenePool"]
+script = ExtResource("3_x384f")
+fragment = {
+"color": Color(0.498039, 0, 0.0470588, 1),
+"poise": ["*", 0.25],
+"score": ["+", -1]
+}
+
+[node name="Plasmid3" type="Node" parent="EnemyGenePool"]
+script = ExtResource("3_x384f")
+fragment = {
+"poiseRecovery": ["*", 0.5],
+"speed": ["+", 50.0]
+}
+
+[node name="Plasmid4" type="Node" parent="EnemyGenePool"]
+script = ExtResource("3_x384f")
+fragment = {
+"color": Color(0, 0.537255, 0.792157, 1),
+"speed": ["*", 1.25],
+"stunPoise": ["+", 12.0]
+}
+
+[node name="Plasmid5" type="Node" parent="EnemyGenePool"]
+script = ExtResource("3_x384f")
+fragment = {
+"health": ["*", 0.5],
+"speed": ["+", 15.0]
+}

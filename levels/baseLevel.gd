@@ -1,6 +1,6 @@
 extends Node2D
 
-
+@export var level = 1
 var building
 var enemy 
 var towerScene
@@ -18,11 +18,11 @@ func _ready():
 	enemy = load("res://enemy/baseEnemy.tscn")
 	# ToDo: Rewrite to allow for multiple enemy classes
 	
-	numberOfEnemies = GameData.levels[self.get_name()]["numberOfEnemies"]	
-	enemyFrequency = GameData.levels[self.get_name()]["enemyFrequency"]
-	coins = GameData.levels[self.get_name()]["start_coins"]
-	gracePeriod = GameData.levels[self.get_name()]["gracePeriod"]
-	waveWait = GameData.levels[self.get_name()]["waveWait"]
+	numberOfEnemies = GameData.levels[level]["numberOfEnemies"]	
+	enemyFrequency = GameData.levels[level]["enemyFrequency"]
+	coins = GameData.levels[level]["start_coins"]
+	gracePeriod = GameData.levels[level]["gracePeriod"]
+	waveWait = GameData.levels[level]["waveWait"]
 	
 	get_node("HUD/StartWaveButton").pressed.connect(start_wave)
 	get_node("HUD/ExitLevelButton").pressed.connect(exit_level)
