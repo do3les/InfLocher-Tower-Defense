@@ -9,6 +9,10 @@ func _ready():
 
 func _input(event):
 	if event is InputEventMouseButton and not built:
+		if event.button_index == MOUSE_BUTTON_RIGHT:
+			get_node("/root/Level1").coins += 50
+			queue_free()
+			return
 		built = true
 		self.position = event.position
 # # Variables are listed where they are first used
