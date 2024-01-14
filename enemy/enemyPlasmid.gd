@@ -7,7 +7,7 @@ class_name enemyPlasmid extends Node
 @export var mutationStrength = 0.5
 
 func _ready():
-	self.mutate(mutationStrength)
+	self.mutate(mutationStrength * get_node("/root/Level").score / 25)
 	
 
 

@@ -77,6 +77,15 @@ var levels = {
 		"start_coins":100,
 		"gracePeriod": 2.0,
 		"waveWait": 5.0
+	},
+	
+	3:{
+		"enemy":"basicEnemy",
+		"numberOfEnemies":5,
+		"enemyFrequency":5,
+		"start_coins":100,
+		"gracePeriod": 1.0,
+		"waveWait": 7.5
 	}
 }
 

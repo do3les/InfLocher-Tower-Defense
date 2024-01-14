@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2wysawgq2a14"]
+
+[ext_resource type="PackedScene" uid="uid://bictxwblu0emk" path="res://path/path.tscn" id="1_7ykmg"]
+[ext_resource type="Script" path="res://levels/baseLevel.gd" id="1_hfj3b"]
+[ext_resource type="PackedScene" uid="uid://cumkwsnn0o4d1" path="res://interfaceScenes/gameHUD.tscn" id="2_ahlqp"]
+[ext_resource type="Script" path="res://enemy/enemyPlasmid.gd" id="4_iq2p6"]
+
+[sub_resource type="Curve2D" id="Curve2D_5vt64"]
+resource_local_to_scene = true
+bake_interval = 64.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -621, -157, 5.65685, 110.309, -5.65685, -110.309, -64, -245, -41.4142, -321.676, 41.4142, 321.676, 234, -135.619, 0, 0, 0, 0, 923, -182.506)
+}
+point_count = 4
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_hfj3b")
+level = 3
+
+[node name="Path" parent="." instance=ExtResource("1_7ykmg")]
+position = Vector2(718, 558.946)
+scale = Vector2(1, 1.00241)
+curve = SubResource("Curve2D_5vt64")
+
+[node name="HUD" parent="." instance=ExtResource("2_ahlqp")]
+
+[node name="Towers" type="Node" parent="."]
+
+[node name="EnemyGenePool" type="Node" parent="."]
+
+[node name="Plasmid1" type="Node" parent="EnemyGenePool"]
+script = ExtResource("4_iq2p6")
+fragment = {
+"health": ["+", 50.0],
+"poise": ["*", 2.0],
+"speed": ["*", 0.4]
+}
+
+[node name="Plasmid2" type="Node" parent="EnemyGenePool"]
+script = ExtResource("4_iq2p6")
+fragment = {
+"health": ["+", 30.0],
+"poiseRecovery": ["*", 2.0],
+"shape": "res://assets/shapes/circle.tres",
+"speed": ["*", 0.75]
+}
+
+[node name="Plasmid3" type="Node" parent="EnemyGenePool"]
+script = ExtResource("4_iq2p6")
+fragment = {
+"coins": ["+", 20.0],
+"color": Color(0.607843, 0.596078, 0.878431, 1),
+"health": ["*", 1.25],
+"score": ["*", 5.0],
+"speed": ["+", -20.0]
+}
