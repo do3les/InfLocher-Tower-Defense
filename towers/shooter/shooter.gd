@@ -8,6 +8,7 @@ func _ready():
 	towerName = "shooter"
 	declare_tower_stats()
 	#print("done")
+	get_node("/root/Level/HUD").gui_input.connect(_on_background_input)
 
 
 func _process(_delta):
@@ -37,3 +38,8 @@ func _on_button_pressed():
 		add_child(ui)
 		shown = true
 
+func _on_background_input(event):
+	print(event)
+	if shown and event is InputEventMouseButton:
+		remove_child(ui)
+		shown = false

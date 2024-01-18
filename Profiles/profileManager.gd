@@ -31,8 +31,8 @@ func save_profile():
 	file.store_var(profileData)
 	file.close()
 
-func first_load(profileIndex):
-	if (profileIndex == 1 && savedOnce == false):
+func first_load(_profileIndex):
+	if (_profileIndex == 1 && savedOnce == false):
 		save_profile()
 		savedOnce = true
 
@@ -42,6 +42,6 @@ func load_profile():
 	profileData = file.get_var()
 	file.close()
 
-func set_and_Save(name, value):
-	profileData[name] = value
+func set_and_Save(_name, value):
+	profileData[_name] = value
 	save_profile()
